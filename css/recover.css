@@ -1,0 +1,21 @@
+
+.container
+{
+	text-align: left;
+	width: 100%;
+}
+.recoverbox{
+	color: #2f2f2f;
+	background-color: #d3c0d3;
+	margin-top: 8%;
+	padding: 50px 50px;
+	border-style: outset;
+	border-width: 5px;
+	border-radius: 30px;
+	box-sizing: border-box;
+}
+
+#correo{
+	 width: 50%;
+	 background-color:#e6e6e7; 
+}

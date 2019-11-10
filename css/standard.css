@@ -1,0 +1,60 @@
+
+*{
+	/*font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;*/
+	/*font-family: Futura,Trebuchet MS,Arial,sans-serif;*/
+	font-family: 'Didact Gothic';
+}
+
+body{
+	background-color: #e6e6e7;
+}
+
+hr{
+	background-color:#51034f;
+	padding: 2px;
+}
+
+h3{
+   text-align: center;
+}
+
+section{
+	background-color:#51034f;
+}
+
+#t1t2 {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.logoutp{
+	width: 10%;
+	height: 10%;
+	text-align: left;
+}
+
+.btn-primary.custom-btn{
+	background-color: #68086c;
+	border-color: #68086c;
+	position: relative;
+}
+
+.btn-primary.custom-btn:hover{
+	background-color: #68086c;
+	border-color: #fff;
+}
+
+.btn-space{
+	margin-left: 20%;
+}
+
+footer{
+	background-color:#51034f;
+	width: 100%;
+	margin-top: 4%;
+	position: none;
+	bottom: 0;
+	color:white;
+}

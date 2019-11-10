@@ -1,0 +1,13 @@
+/* Start charts */
+.charts {
+  margin-top: 25px;
+  color: #fff;
+}
+.charts .chart-container {
+  background-color: #d3c0d3;
+  padding: 15px;
+}
+.charts .chart-container h3 {
+  margin: 0 0 10px;
+  font-size: 17px;
+}

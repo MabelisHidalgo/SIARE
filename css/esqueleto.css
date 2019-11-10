@@ -1,0 +1,199 @@
+/******CSS PARA LA PANTALLA --BARRA DE NAVEGACIÓN-- ****/
+
+*{
+	/*font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;*/
+	/*font-family: Futura,Trebuchet MS,Arial,sans-serif;*/
+	font-family: 'Didact Gothic';
+}
+
+body{
+	background-color: #e6e6e7;
+	overflow-x:hidden;
+}
+
+.body{
+	background-color: #e6e6e7;
+}
+
+.container{
+  overflow: auto;
+  height: 100%;
+}
+
+.btn-primary.custom-btn{
+	background-color: #68086c;
+	border-color: #68086c;
+	position: relative;
+}
+
+.btn-primary.custom-btn:hover{
+	background-color: #68086c;
+	border-color: #fff;
+}
+
+.btn-space{
+	margin-left: 30%;
+}
+
+h2{
+	color: #51034f;
+	text-align: center;
+}
+
+/******CSS PARA LA PANTALLA --BARRA DE NAVEGACIÓN-- ****/
+
+/******CSS PARA LA PANTALLA --ESTADISTICA-- ****/
+.progress{
+		position: absolute;
+		left: 50.5%;
+		top: 30%;
+		/*width: 2.5%;*/
+		height: 50%;
+		opacity: 0.8;
+		filter: alpha(opacity=80);
+		color: #2f2f2f;
+}
+
+.progress-bar{
+		position:relative;
+}
+
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+
+/***** CSS PANTALLA --PERFIL_ADM-- *****/
+
+/*#abc1
+{
+	width: 400px;
+	height: auto;
+	margin-left: 39%;
+}*/
+
+.cuadroSombra{
+	padding: 10px 10px;
+	border-style: outset;
+	border-width: 5px;
+	border-radius: 30px;
+	box-sizing: border-box;
+	/*position: fixed;*/
+	clear: none;
+}
+
+#imagenPerfil{
+	width: 100px;
+	height: 100px;
+}
+
+/***** CSS PANTALLA --PERFIL_ADM-- *****/
+
+#bordeCustom{
+	padding: 50px 50px;
+	border-style: outset;
+	border-width: 5px;
+	border-radius: 30px;
+	border-color: #68086c;
+	box-sizing: border-box;
+	color: #2f2f2f;
+	background-color: #d3c0d3;
+}
+
+#fotoperfil{
+	width: 30%;
+	height: 40%;
+	border-radius: 30%;
+	position: center;
+	background-color:#e6e6e7;
+}
+
+/* Start charts */
+.charts {
+  background-color: #d3c0d3;
+  margin-top: 25px;
+  color: #fff;
+}
+.charts .chart-container {
+  background-color: #d3c0d3;
+  border-style: outset;
+  border-color: #68086c;
+  padding: 15px;
+}
+.charts .chart-container h3 {
+  margin: 0 0 10px;
+  font-size: 17px;
+}
+
+
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+
+/***** CSS PANTALLA --SOLICITUD_HISTORIAL-- *****/
+
+#fondoSol{
+	background-color: #d3c0d3;
+	padding: 0px 10px 0px 10px;
+	border-style: outset;
+	border-width: 5px;
+	border-radius: 10px;
+	box-sizing: border-box;
+	border-color: #68086c;
+}
+
+/***/
+.pagination > li > a
+{
+    background-color: #68086c;
+    color: #e6e6e7;
+}
+
+.pagination > li > a:focus,
+.pagination > li > a:hover,
+.pagination > li > span:focus,
+.pagination > li > span:hover
+{
+    color: #5a5a5a;
+    background-color: #eee;
+    border-color: #ddd;
+}
+
+.pagination > .active > a
+{
+    color: white;
+    background-color: #5A4181 !Important;
+    border: solid 1px #5A4181 !Important;
+}
+
+.pagination > .active > a:hover
+{
+    background-color: #5A4181 !Important;
+    border: solid 1px #5A4181;
+}
+/***** CSS PANTALLA --SOLICITUD_HISTORIAL-- *****/
+
+#opCuadro{
+	background-color: #d3c0d3;
+}
+
+#histoCuadro{
+	background-color: #d3c0d3;
+	width: 100%;
+}
+
+#texform{
+	margin-left: 5px;
+}
+/***** CSS PANTALLA --SOLICITUD_PENDIENTE-- *****/
+
+textarea {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+/*.scrollbar {
+	margin-left: auto;
+	float: left;
+	height: auto;
+	width: auto;
+	background: #fff;
+	overflow-y: scroll;
+}*/

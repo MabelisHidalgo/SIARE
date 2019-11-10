@@ -1,0 +1,29 @@
+.container
+{
+	text-align: left;
+	width: 100%;
+}
+
+.boxfrm2{
+	padding: 50px 50px;
+	border-style: outset;
+	border-width: 5px;
+	border-radius: 30px;
+	box-sizing: border-box;
+	color: #2f2f2f;
+	background-color: #d3c0d3;
+}
+
+
+#datos2{
+      width: 60%;
+      background-color:#e6e6e7; 
+
+}
+
+#boton{
+	border-style: outset;
+	border-width: 5px;
+	border-radius: 30px;
+	box-sizing: border-box;
+}
