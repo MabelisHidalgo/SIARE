@@ -1,260 +1,195 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- meta tags -->
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <!--font-->
-    <link
-      href="https://fonts.googleapis.com/css?family=Didact Gothic"
-      rel="stylesheet"
-    />
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="../css/bootstrap.min.css" />
-    <!--CSS-->
-    <link rel="stylesheet" type="text/css" href="../css/standard.css" />
-    <link rel="stylesheet" type="text/css" href="../css/formlugar.css" />
 
-    <title>Solicitud de Espacio</title>
-  </head>
+<head>
+   <!-- meta tags -->
+   <meta charset="utf-8" />
+   <meta name="viewport" content="width=device-width, initial-scale  =1" />
+   <!--font-->
+   <link href="https://fonts.googleapis.com/css?family=Didact Gothic" rel="stylesheet" />
+   <!-- Bootstrap CSS -->
+   <link rel="stylesheet" href="../css/bootstrap.min.css" />
+   <!--CSS-->
+   <link rel="stylesheet" type="text/css" href="../css/standard.css" />
+   <link rel="stylesheet" type="text/css" href="../css/formlugar.css" />
 
-  <body>
-    <!--header-->
-    <header>
+   <title>Solicitud de Espacio</title>
+</head>
+
+<body>
+   <!--header-->
+   <header>
       <div class="container text-center py-3">
-        <div class="col-sm-12">
-          <img src="../img/logo_utp.png" class="logoutp" />
-          <h4>Universidad Tecnológica de Panamá</h4>
-          <h5>Sistema para la Reservación de Eventos Academicos</h5>
-        </div>
+         <div class="col-sm-12">
+            <img src="../img/logo_utp.png" class="logoutp" />
+            <h4>Universidad Tecnológica de Panamá</h4>
+            <h5>Sistema para la Reservación de Eventos Academicos</h5>
+         </div>
       </div>
-    </header>
-    <!-- Inicio Barra de navegacion -->
-    <section>
+   </header>
+   <!-- Inicio Barra de navegacion -->
+   <section>
       <nav class="navbar navbar-expand-lg navbar-dark  py-3">
-        <a class="navbar-brand" href="#">-SIARE-</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
+         <a class="navbar-brand" href="#">-SIARE-</a>
+         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+         </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="../page/calendarioprin.html"
-                >Calendario<span class="sr-only">(current)</span></a
-              >
-            </li>
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                id="navbarDropdown"
-                role="button"
-                data-toggle="dropdown"
-                aria-haspopup="true"
-                aria-expanded="false"
-              >
-                Formularios
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="../page/formlugar.html"
-                  >Formulario Principal</a
-                >
-                <a class="dropdown-item" href="../page/formmobiliario.html"
-                  >Formulario Mobiliario</a
-                >
-                <a class="dropdown-item" href="../page/formprensa.html"
-                  >Formulario Prensa</a
-                >
-              </div>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="../page/solicitud.html"
-                >Informacion de Solicitudes</a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="../page/profile.html">Perfil</a>
-            </li>
-          </ul>
+         <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+               <li class="nav-item active">
+                  <a class="nav-link" href="../page/calendarioprin.html">Calendario<span
+                        class="sr-only">(current)</span></a>
+               </li>
+               <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                     aria-haspopup="true" aria-expanded="false">
+                     Formularios
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                     <a class="dropdown-item" href="../page/formlugar.html">Formulario Principal</a>
+                     <a class="dropdown-item" href="../page/formmobiliario.html">Formulario Mobiliario</a>
+                     <a class="dropdown-item" href="../page/formprensa.html">Formulario Prensa</a>
+                  </div>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="../page/solicitud.html">Informacion de Solicitudes</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="../page/profile.html">Perfil</a>
+               </li>
+            </ul>
 
-          <button class="btn btn-primary btn-sm custom-btn">
-            <a class="nav-link text-white" href="../php/cerrar.php"
-              >Cerrar Sesión</a
-            >
-          </button>
-        </div>
+            <button class="btn btn-primary btn-sm custom-btn">
+               <a class="nav-link text-white" href="../php/cerrar.php">Cerrar Sesión</a>
+            </button>
+         </div>
       </nav>
-    </section>
-    <br /><br />
-    <!-- Fin Barra de navegacion -->
-    <h3>Solicitud de Espacio</h3>
-    <br />
-    <div class="container">
+   </section>
+   <br /><br />
+   <!-- Fin Barra de navegacion -->
+   <h3>Solicitud de Espacio</h3>
+   <br />
+   <div class="container">
       <div class="col-sm-12">
-        <div class="boxfrm">
-          <!--Formulario-->
-          <form method="post" action="">
-            <!-- Campo-->
-            <div class="row">
-              <div class="col-sm-12 col-md-3">
-                Lugar del evento:
-              </div>
-              <div class="col-sm-12 col-md-9">
-                <select type="text" id="datos2" name="Lugar">
-                  <option value="Lobby Edf 3">Lobby Edf 3</option>
-                  <option value="Salon de Eventos Edf 1"
-                    >Salon de Eventos Edf 1</option
-                  >
-                  <option value="Salon de Eventos Edf Postgrado"
-                    >Salon de Eventos Edf Postgrado</option
-                  >
-                  <option value="Auditorio CVLS">Auditorio CVLS</option>
-                </select>
-                <br /><br />
-              </div>
-            </div>
-            <!-- Campo-->
-            <div class="row">
-              <div class="col-sm-12 col-md-3">
-                Fecha:
-              </div>
-              <div class="col-sm-12 col-md-9">
-                <input type="date" id="datos2" name="fecha" /><br /><br />
-              </div>
-            </div>
-            <!-- Campo-->
-            <div class="row">
-              <div class="col-sm-12 col-md-3">
-                Hora entrada:
-              </div>
-              <div class="col-sm-12 col-md-9">
-                <input
-                  type="time"
-                  id="datos2"
-                  name="horaEntrada"
-                  min="=07-"
-                /><br /><br />
-              </div>
-            </div>
-            <!-- Campo-->
-            <div class="row">
-              <div class="col-sm-12 col-md-3">
-                Hora salida:
-              </div>
-              <div class="col-sm-12 col-md-9">
-                <input
-                  type="time"
-                  id="datos2"
-                  name="horaSalida"
-                  min="=07-"
-                /><br /><br />
-              </div>
-            </div>
-            <hr />
-            <!-- Campo-->
-            <div class="row">
-              <div class="col-sm-12 col-md-3">
-                Nombre del evento:
-              </div>
-              <div class="col-sm-12 col-md-9">
-                <input
-                  type="text"
-                  id="datos2"
-                  name="nombreEvento"
-                /><br /><br />
-              </div>
-            </div>
-            <!-- Campo-->
-            <div class="row">
-              <div class="col-sm-12 col-md-3">
-                Descripción:
-              </div>
-              <div class="col-sm-12 col-md-9">
-                <input
-                  type="text"
-                  id="descrip"
-                  name="descripcion"
-                /><br /><br />
-              </div>
-            </div>
-            <!-- Campo-->
-            <div class="row">
-              <div class="col-sm-12 col-md-3">
-                Asistentes al evento:
-              </div>
-              <div class="col-sm-12 col-md-9">
-                <input
-                  type="number"
-                  id="datos2"
-                  name="personas"
-                  min="10"
-                  max="600"
-                /><br /><br />
-              </div>
-            </div>
-            <hr />
-            <!-- Campo-->
-            <div class="row">
-              <div class="col-sm-12  col-md-8">
-                Agregar mobiliario <input type="checkbox" name="" />
-                <br /><br />
-                <button class="btn btn-primary btn-sm custom-btn">
-                  <a
-                    class="nav-link text-white"
-                    href="../page/formmobiliario.html"
-                    >Ver Formulario</a
-                  >
-                </button>
-                <br /><br />
-                Agregar prensa <input type="checkbox" name="" /> <br /><br />
-                <button class="btn btn-primary btn-sm custom-btn">
-                  <a class="nav-link text-white" href="../page/formprensa.html"
-                    >Ver Formulario</a
-                  >
-                </button>
-              </div>
-              <div class="col-sm-12  col-md-4 text-center py-5 my-3">
-                <input
-                  class="btn btn-primary custom-btn"
-                  type="submit"
-                  name=""
-                  value="Enviar Solicitud"
-                />
-              </div>
-            </div>
-          </form>
-        </div>
+         <div class="boxfrm">
+            <!--Formulario-->
+            <form method="post" action="../php/formularios.php">
+               <!-- Campo-->
+               <div class="row">
+                  <div class="col-sm-12 col-md-3">
+                     Lugar del evento:
+                  </div>
+                  <div class="col-sm-12 col-md-9">
+                     <select type="text" id="datos2" name="Lugar">
+                        <option value="Lobby Edf 3">Lobby Edf 3</option>
+                        <option value="Salon de Eventos Edf 1">Salon de Eventos Edf 1</option>
+                        <option value="Salon de Eventos Edf Postgrado">Salon de Eventos Edf Postgrado</option>
+                        <option value="Auditorio CVLS">Auditorio CVLS</option>
+                     </select>
+                     <br /><br />
+                  </div>
+               </div>
+               <!-- Campo-->
+               <div class="row">
+                  <div class="col-sm-12 col-md-3">
+                     Fecha:
+                  </div>
+                  <div class="col-sm-12 col-md-9">
+                     <input type="date" id="datos2" name="fecha" /><br /><br />
+                  </div>
+               </div>
+               <!-- Campo-->
+               <div class="row">
+                  <div class="col-sm-12 col-md-3">
+                     Hora entrada:
+                  </div>
+                  <div class="col-sm-12 col-md-9">
+                     <input type="time" id="datos2" name="horaEntrada" min="=07-" /><br /><br />
+                  </div>
+               </div>
+               <!-- Campo-->
+               <div class="row">
+                  <div class="col-sm-12 col-md-3">
+                     Hora salida:
+                  </div>
+                  <div class="col-sm-12 col-md-9">
+                     <input type="time" id="datos2" name="horaSalida" min="=07-" /><br /><br />
+                  </div>
+               </div>
+               <hr />
+               <!-- Campo-->
+               <div class="row">
+                  <div class="col-sm-12 col-md-3">
+                     Nombre del evento:
+                  </div>
+                  <div class="col-sm-12 col-md-9">
+                     <input type="text" id="datos2" name="nombreEvento" /><br /><br />
+                  </div>
+               </div>
+               <!-- Campo-->
+               <div class="row">
+                  <div class="col-sm-12 col-md-3">
+                     Descripción:
+                  </div>
+                  <div class="col-sm-12 col-md-9">
+                     <input type="text" id="descrip" name="descripcion" /><br /><br />
+                  </div>
+               </div>
+               <!-- Campo-->
+               <div class="row">
+                  <div class="col-sm-12 col-md-3">
+                     Asistentes al evento:
+                  </div>
+                  <div class="col-sm-12 col-md-9">
+                     <input type="number" id="datos2" name="personas" min="10" max="600" /><br /><br />
+                  </div>
+               </div>
+               <hr />
+               <!-- Campo-->
+               <div class="row">
+                  <div class="col-sm-12  col-md-8">
+                     Agregar mobiliario <input type="checkbox" name="" />
+                     <br /><br />
+                     <button class="btn btn-primary btn-sm custom-btn">
+                        <a class="nav-link text-white" href="../page/formmobiliario.html">Ver Formulario</a>
+                     </button>
+                     <br /><br />
+                     Agregar prensa <input type="checkbox" name="" /> <br /><br />
+                     <button class="btn btn-primary btn-sm custom-btn">
+                        <a class="nav-link text-white" href="../page/formprensa.html">Ver Formulario</a>
+                     </button>
+                  </div>
+                  <div class="col-sm-12  col-md-4 text-center py-5 my-3">
+                     <input class="btn btn-primary custom-btn" type="submit" name="submit" value="submit" />
+                  </div>
+               </div>
+            </form>
+         </div>
       </div>
-    </div>
-    <!-- Footer -->
+   </div>
+   <!-- Footer -->
 
-    <footer class="page-footer font-small pt-4">
+   <footer class="page-footer font-small pt-4">
       <!-- Footer Elements -->
       <div class="container"></div>
       <!-- Footer Elements -->
 
       <!-- Copyright -->
       <div class="footer-copyright text-center ">
-        © 2019 Copyright <br /><a href="">--------</a>
+         © 2019 Copyright <br /><a href="">--------</a>
       </div>
       <!-- Copyright -->
-    </footer>
+   </footer>
 
-    <!-- Footer -->
+   <!-- Footer -->
 
-    <!-- JS -->
-    <script src="../js/jquery-3.3.1.slim.min.js"></script>
-    <script src="../js/popper.min.js"></script>
-    <script src="../js/bootstrap.min.js"></script>
-    <!-- JS -->
-  </body>
+   <!-- JS -->
+   <script src="../js/jquery-3.3.1.slim.min.js"></script>
+   <script src="../js/popper.min.js"></script>
+   <script src="../js/bootstrap.min.js"></script>
+   <!-- JS -->
+</body>
+
 </html>
