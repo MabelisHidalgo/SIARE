@@ -1,5 +1,5 @@
 <?php
 
-$connection = mysqli_connect('localhost', 'root', '', 'SIAREDB');
+$connection = mysqli_connect('localhost', 'root', '', 'SIARE');
 
 ?>
