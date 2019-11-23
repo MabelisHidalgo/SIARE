@@ -1,3 +1,5 @@
+<?php include "db.php"; ?>
+<?php include "funciones.php"; ?>
 <?php
 
 if(isset($_POST["submit"]))
@@ -11,13 +13,6 @@ if(isset($_POST["submit"]))
          $password=$_POST["contra"];
          $rep_password=$_POST["ver_contra"];
         
-
-         echo "<p>$nombre</p><br>";
-         echo "<p>$apellido</p><br>";
-         echo "<p>$cedula</p><br>";
-         echo "<p>$correo</p><br>";
-         echo "<p>$departamento</p><br>";
-         echo "<p>$password</p><br>";
-         echo "<p>$rep_password</p><br>";
+        Crear_Datos($nombre, $apellido, $cedula, $correo, $departamento, $password, $rep_password);
       }
 ?>
