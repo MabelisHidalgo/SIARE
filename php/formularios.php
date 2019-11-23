@@ -17,6 +17,12 @@
         $estado = "pendiente";  //hacer dinámico
         $usuario = "adm12";    //Tomar de session
         
+        $lugar = mysqli_real_escape_string($connection,$lugar);
+        $nombreEvento = mysqli_real_escape_string($connection,$nombre);
+        $descripcion = mysqli_real_escape_string($connection,$descripcion);
+        $estado = mysqli_real_escape_string($connection,$estado);
+
+
         //TESTING connection
         /*if($connection){
             echo "we are connected";
