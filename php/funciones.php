@@ -3,7 +3,6 @@
 
     function Crear_Datos($nombre, $apellido, $cedula, $correo, $departamento, $password, $rep_password){
 
-        $id = "abc24";
         global $connection;
         $nombre = mysqli_real_escape_string($connection,$nombre);
         $correo = mysqli_real_escape_string($connection,$correo);
@@ -12,7 +11,8 @@
         $departamento = mysqli_real_escape_string($connection,$departamento);
         $password = mysqli_real_escape_string($connection,$password);
         $rep_password = mysqli_real_escape_string($connection,$rep_password);
-
+        $id = Generar_ID($departamento);
+        
         //TESTING connection
         /*if($connection){
             echo "we are connected";
@@ -32,6 +32,26 @@
             
     }
 
+    function Generar_ID($departamento){
+
+        $base = "";
+        echo "<p>$departamento</p><br>";
+
+        if($departamento == "Administrativo"){
+            $base = "adm";
+        }elseif($departamento == "Prensa"){
+            $base = "pre";
+        }elseif($departamento == "Mobiliario"){
+            $base = "mob";
+        }elseif($departamento == "Usuario"){
+            $base = "usr";
+        }
+        
+        $base .= strval(rand(10000,99999));
+
+        return $base;
+
+    }
 
 
 ?>
