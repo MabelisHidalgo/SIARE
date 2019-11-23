@@ -1,114 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-<!-- meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-<!--font-->
-<link href='https://fonts.googleapis.com/css?family=Didact Gothic' rel='stylesheet'>
 
-<!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="../css/bootstrap.min.css">
-<!--CSS-->
-    <link rel="stylesheet" type="text/css" href="../css/standard.css"> 
-    <link rel="stylesheet" type="text/css" href="../css/active.css">
+<head>
+  <!-- meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--font-->
+  <link href='https://fonts.googleapis.com/css?family=Didact Gothic' rel='stylesheet'>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <!--CSS-->
+  <link rel="stylesheet" type="text/css" href="../css/standard.css">
+  <link rel="stylesheet" type="text/css" href="../css/active.css">
 
 
-    <title>Activar Cuenta</title>
-  </head>
+  <title>Activar Cuenta</title>
+</head>
 
-  <body>
-  	<h3>Ingrese sus datos personales</h3>
-  	<hr>
-       
+<body>
+  <h3>Ingrese sus datos personales</h3>
+  <hr>
 
-        	 <div class="container">
-        	 		 <div class=" text-left col-sm-12">
-        	 		     <div class="activebox">
-      	  	 		 	 <form method="POST" action="#">
-                     <!-- Campo-->
-                      <div class="row">
-                            <div class="col-sm-12 col-md-3">
-                               Cédula:
-                            </div>
-                            <div class="col-sm-12 col-md-9">
-                              <input type="text" id="datos" name="" placeholder="00-0000-0000"><br><br>
-                            </div>
-                      </div>
-                      <!-- Campo-->
-                      <div class="row">
-                            <div class="col-sm-12 col-md-3">
-                               Correo Institucional:
-                            </div>
-                            <div class="col-sm-12 col-md-9">
-                              <input type="email" id="datos" name="" placeholder="example@utp.ac.pa"><br><br>
-                            </div>
-                      </div>
-                      <!-- Campo-->
-                      <div class="row">
-                            <div class="col-sm-12 col-md-3">
-                               Telefono:
-                            </div>
-                            <div class="col-sm-12 col-md-9">
-                              <input type="tel" id="datos" name="" placeholder="6666-6666"><br><br>  <!--pattern="[0-9] {4} - [0-9] {4}" -->
-                            </div>
-                      </div>
-                      <!-- Campo-->
-                      <div class="row">
-                            <div class="col-sm-12 col-md-3">
-                               Contraseña:
-                            </div>
-                            <div class="col-sm-12 col-md-9">
-                              <input type="password" id="datos" name="" placeholder="******"><br><br>
-                            </div>
-                      </div>
-                      <!-- Campo-->
-                      <div class="row">
-                            <div class="col-sm-12 col-md-3">
-                               Verificar Contraseña:
-                            </div>
-                            <div class="col-sm-12 col-md-9">
-                              <input type="password" id="datos" name="" placeholder="******"><br><br>
-                            </div>
-                      </div>
-                      <!-- Campo-->
-                      <div class="row">
-                            <div class="col-sm-12 col-md-3">
-                               Captcha:
-                            </div>
-                            <div class="col-sm-12 col-md-9">
-                              <input type="text" id="datos" name="" placeholder="...."><br><br>
-                            </div>
-                      </div>
-                      <!-- Campo-->
-                      <div class="row text-center">
-                            <div class="col-sm-12">
-                               <input class="btn btn-primary custom-btn" type="submit" id="button" name="" value="Activar Cuenta">                      
-                             </div>
-                      </div>
 
-      		             </form>
-      	             </div>
-        	 		 </div>
-        	 	
-        	 </div>
- <!-- Footer -->
-     <footer class="font-small pt-3">
+  <div class="container">
+    <div class=" text-left col-sm-12">
+      <div class="activebox">
+        <form method="POST" action="../php/crear_cuenta.php">
+          <!-- Campo-->
+          <div class="row">
+            <div class="col-sm-12 col-md-3">
+              Nombre:
+            </div>
+            <div class="col-sm-12 col-md-9">
+              <input type="text" id="datos" name="nombre"><br><br>
+            </div>
+          </div>
+          <!-- Campo-->
+          <div class="row">
+            <div class="col-sm-12 col-md-3">
+              Apellido:
+            </div>
+            <div class="col-sm-12 col-md-9">
+              <input type="text" id="datos" name="apellido"><br><br>
+            </div>
+          </div>
+          <!-- Campo-->
+          <div class="row">
+            <div class="col-sm-12 col-md-3">
+              Cédula:
+            </div>
+            <div class="col-sm-12 col-md-9">
+              <input type="text" id="datos" name="cedula" placeholder="00-0000-0000"><br><br>
+            </div>
+          </div>
+          <!-- Campo-->
+          <div class="row">
+            <div class="col-sm-12 col-md-3">
+              Correo Institucional:
+            </div>
+            <div class="col-sm-12 col-md-9">
+              <input type="email" id="datos" name="correo" placeholder="example@utp.ac.pa"><br><br>
+            </div>
+          </div>
+          <!-- Campo-->
+          <div class="row">
+            <div class="col-sm-12 col-md-3">
+              Departamento:
+            </div>
+            <div class="col-sm-12 col-md-9">
+              <select type="text" id="datos2" name="departamento">
+                <option value="Administrativo">Administrativo</option>
+                <option value="Prensa">Prensa</option>
+                <option value="Mobiliario">Mobiliario</option>
+                <option value="Usuario">Profesor</option>
+              </select>
+              <br><br>
+              <!--pattern="[0-9] {4} - [0-9] {4}" -->
+            </div>
+          </div>
+          <!-- Campo-->
+          <div class="row">
+            <div class="col-sm-12 col-md-3">
+              Contraseña:
+            </div>
+            <div class="col-sm-12 col-md-9">
+              <input type="password" id="datos" name="contra" placeholder="******"><br><br>
+            </div>
+          </div>
+          <!-- Campo-->
+          <div class="row">
+            <div class="col-sm-12 col-md-3">
+              Verificar Contraseña:
+            </div>
+            <div class="col-sm-12 col-md-9">
+              <input type="password" id="datos" name="ver_contra" placeholder="******"><br><br>
+            </div>
+          </div>
+          <!-- Campo-->
+          <!--
 
-        <!-- Copyright -->
-         <div class="text-center">© 2019 Copyright
-           <br><a href="">--------</a>
-         </div>
-        <!-- Copyright -->
-     </footer>
+                        <div class="row">
+                          <div class="col-sm-12 col-md-3">
+                            Captcha:
+                          </div>
+                          <div class="col-sm-12 col-md-9">
+                            <input type="text" id="datos" name="" placeholder="...."><br><br>
+                          </div>
+                        </div>
+                      -->
+          <!-- Campo-->
+          <div class="row text-center">
+            <div class="col-sm-12">
+              <input class="btn btn-primary custom-btn" type="submit" id="button" name="submit" value="Activar Cuenta">
+            </div>
+          </div>
 
-<!-- Footer -->
-<
-<!-- JS -->
+        </form>
+      </div>
+    </div>
+
+  </div>
+  <!-- Footer -->
+  <footer class="font-small pt-3">
+
+    <!-- Copyright -->
+    <div class="text-center">© 2019 Copyright
+      <br><a href="">--------</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+
+  <!-- Footer -->
+  < <!-- JS -->
     <script src="../js/jquery-3.3.1.slim.min.js"></script>
     <script src="../js/popper.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
-<!-- JS -->
-  </body>
-</html>
+    <!-- JS -->
+</body>
 
+</html>
