@@ -1,71 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-<!-- meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-<!--font-->
-<link href='https://fonts.googleapis.com/css?family=Didact Gothic' rel='stylesheet'>
-<!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<!--CSS-->  
-     <link rel="stylesheet" type="text/css" href="css/standard.css"> 
-     <link rel="stylesheet" type="text/css" href="css/login.css">
 
-    <title>Login</title>
-  </head>
+<head>
+  <!-- meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--font-->
+  <link href='https://fonts.googleapis.com/css?family=Didact Gothic' rel='stylesheet'>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!--CSS-->
+  <link rel="stylesheet" type="text/css" href="css/standard.css">
+  <link rel="stylesheet" type="text/css" href="css/login.css">
 
-  <body>
-<!--header-->
-    
+  <title>Login</title>
+</head>
+
+<body>
+  <!--header-->
+
+  <div class="container">
+    <div class="row">
+      <div class=" text-center col-12 py-5">
+        <div class="loginbox">
+          <img src="../SIARE/img/usuario.png" class="icono">
+          <!--aquí inserté el ícono/imagen de una personita-->
+          <br><br>
+          <!--Formulario-->
+          <form action="../SIARE/php/direct.php" method="POST">
+            Correo<br><input type="email" id="d1" name="email" placeholder="example@utp.ac.pa"><br><br>
+            Contraseña<br><input type="password" id="d1" name="pass" placeholder="************"><br><br>
+            <input type="checkbox" name="">Recordar contraseña<br><br>
+            <input class="btn btn-primary custom-btn" type="submit" name="submit" value="Ingresar">
+            <br><br>
+            <!--Redirige a pagina para crear cuenta -->
+            <button class="btn btn-primary btn-sm custom-btn "> <a class="nav-link text-white"
+                href="page/active.html">Activar Cuenta</a></button>
+            <!--Redirige a pagina que recupera contraseña-->
+            <button class="btn btn-primary btn-sm custom-btn"> <a class="nav-link text-white"
+                href="page/recover.html">Recuperar Contraseña</a></button>
+          </form>
+          <!--Fin Formulario-->
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- Footer -->
+  <footer class="page-footer font-small text-white py-3">
+    <!-- Footer Elements -->
     <div class="container">
-     	 <div class="row">
-     	 	 <div class=" text-center col-12 py-5">
-     	 	 	 <div class="loginbox">
-	                 <img src="../SIARE/img/usuario.png" class="icono">
-	                  <!--aquí inserté el ícono/imagen de una personita-->
-	                 <br><br>
-	                    <!--Formulario-->
-		                <form action="../SIARE/php/direct.php" method="POST" >
-			                Correo<br><input type="email" id="d1" name="email" placeholder="example@utp.ac.pa"><br><br>
-							Contraseña<br><input type="password" id="d1" name="pass" placeholder="************"><br><br>
-							<input type="checkbox"  name="">Recordar contraseña<br><br>
-							<input class="btn btn-primary custom-btn" type="submit"  name="" value="Ingresar">
-								<br><br>
-								<!--Redirige a pagina para crear cuenta -->
-								<button class="btn btn-primary btn-sm custom-btn "> <a class="nav-link text-white" href="page/active.html">Activar Cuenta</a></button>
-								<!--Redirige a pagina que recupera contraseña-->
-								<button class="btn btn-primary btn-sm custom-btn"> <a class="nav-link text-white" href="page/recover.html">Recuperar Contraseña</a></button>
-		                </form>
-		                <!--Fin Formulario-->
-                 </div>
-     	 		
-     	 	 </div>
-     	 </div>
-     </div>
 
-	
+    </div>
+    <!-- Footer Elements -->
 
-<!-- Footer -->
-     <footer class="page-footer font-small text-white py-3">
-         <!-- Footer Elements -->
-         <div class="container">
-           
-         </div>
-        <!-- Footer Elements -->
+    <!-- Copyright -->
+    <div class="footer-copyright text-center ">© 2019 Copyright</div>
+    <!-- Copyright -->
+  </footer>
 
-        <!-- Copyright -->
-         <div class="footer-copyright text-center ">© 2019 Copyright</div>
-        <!-- Copyright -->
-     </footer>
+  <!-- Footer -->
 
-<!-- Footer -->
+  <!-- JS -->
+  <script src="../js/jquery-3.3.1.slim.min.js"></script>
+  <script src="../js/popper.min.js"></script>
+  <script src="../js/bootstrap.min.js"></script>
+  <!-- JS -->
+</body>
 
-<!-- JS -->
-    <script src="../js/jquery-3.3.1.slim.min.js"></script>
-    <script src="../js/popper.min.js"></script>
-    <script src="../js/bootstrap.min.js"></script>
-<!-- JS -->
-  </body>
 </html>
