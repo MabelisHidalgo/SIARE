@@ -1,3 +1,24 @@
+<?php include "../php/db.php";  ?>
+<?php
+  session_start();
+  global $connection;
+  $usuario = $_SESSION["id"];
+  $query = "SELECT Email, Nombre, Apellido, Cedula, Departamento FROM USUARIOS WHERE ID = '$usuario'";
+  $result = mysqli_query($connection, $query);
+
+  $row = mysqli_fetch_assoc($result);
+  $email =  $row['Email'];
+  $nombre = $row['Nombre'];
+  $apellido = $row['Apellido'];
+  $cedula = $row['Cedula'];
+  $departamento = $row['Departamento'];
+
+  $nombre .= $apellido;
+
+
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -49,11 +70,11 @@
               <button class="btn btn-primary custom-btn ">Cambiar Contraseña</button>
               <br>
               <hr>
-                <h4>Información Personal</h4>
-                   <b>Nombre: Raúl Castro</b><br><br>
-                   <b>Cédula: 9-888-1111</b><br><br>
-                   <b>Correo: adm@utp.ac.pa</b><br><br>
-                   <b>Telefono: 6967-6069</b><br>
+              <h4>Información Personal</h4>
+                     <b>Nombre: <?php echo "<b>$nombre</b>"; ?></b><br><br>
+                     <b>Cédula: <?php echo "<b>$cedula</b>"; ?></b><br><br>
+                     <b>Correo: <?php echo "<b>$email</b>"; ?></b><br><br>
+                     <b>Departamento: <?php echo "<b>$departamento</b>"; ?></b><br>
            </div>
         </div>
       </div>
