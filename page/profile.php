@@ -1,7 +1,9 @@
 <?php include "../php/db.php";  ?>
 <?php
-global $connection;
-  $query = "SELECT Email, Nombre, Apellido, Cedula, Departamento FROM USUARIOS WHERE ID = 'mob14698'";
+  session_start();
+  global $connection;
+  $usuario = $_SESSION["id"];
+  $query = "SELECT Email, Nombre, Apellido, Cedula, Departamento FROM USUARIOS WHERE ID = '$usuario'";
   $result = mysqli_query($connection, $query);
 
   $row = mysqli_fetch_assoc($result);
@@ -76,7 +78,7 @@ global $connection;
                                  <a class="nav-link" href="../page/solicitud.html">Informacion de Solicitudes</a>
                               </li>
                               <li class="nav-item">
-                                 <a class="nav-link" href="../page/profile.html">Perfil</a>
+                                 <a class="nav-link" href="../page/profile.php">Perfil</a>
                               </li>
                          </ul>
                          

@@ -14,5 +14,6 @@ if(isset($_POST["submit"]))
          $rep_password=$_POST["ver_contra"];
         
         Crear_Datos($nombre, $apellido, $cedula, $correo, $departamento, $password, $rep_password);
-      }
+        header('Location:../index.html');
+      }     
 ?>

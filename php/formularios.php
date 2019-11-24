@@ -1,10 +1,11 @@
 <?php include "db.php"; ?>
+<?php include "funciones.php"; ?>
 <?php
     //inicio de session
     session_start();
 
     if(isset($_POST['submit'])){
-        $id = "5426";
+        $id = generateRandomString();
         $lugar = $_POST['Lugar'];
         $fecha = $_POST['fecha'];
         $entrada = $_POST['horaEntrada'];
@@ -15,10 +16,10 @@
         $formPrensa = NULL;     //Hacer dinámico
         $formMobiliario = NULL; //Hacer dinámico
         $estado = "pendiente";  //hacer dinámico
-        $usuario = "adm12";    //Tomar de session
+        $usuario = $_SESSION["id"];    //Tomar de session
         
         $lugar = mysqli_real_escape_string($connection,$lugar);
-        $nombreEvento = mysqli_real_escape_string($connection,$nombre);
+        $nombreEvento = mysqli_real_escape_string($connection,$nombreEvento);
         $descripcion = mysqli_real_escape_string($connection,$descripcion);
         $estado = mysqli_real_escape_string($connection,$estado);
 
@@ -35,6 +36,9 @@
         $query .= "VALUES ('$id', '$lugar', '$fecha', '$entrada', '$salida', '$nombreEvento', '$descripcion', $asistencia, '$estado', NULL, NULL, '$usuario')";
         
         $result = mysqli_query($connection, $query);
+
+        header('Location:../page/calendarioprin.html');
+
 
     }
 ?>
