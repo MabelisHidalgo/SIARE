@@ -1,3 +1,23 @@
+<?php include "../php/db.php";  ?>
+<?php
+global $connection;
+  $query = "SELECT Email, Nombre, Apellido, Cedula, Departamento FROM USUARIOS WHERE ID = 'mob14698'";
+  $result = mysqli_query($connection, $query);
+
+  $row = mysqli_fetch_assoc($result);
+  $email =  $row['Email'];
+  $nombre = $row['Nombre'];
+  $apellido = $row['Apellido'];
+  $cedula = $row['Cedula'];
+  $departamento = $row['Departamento'];
+
+  $nombre .= $apellido;
+
+
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -87,10 +107,10 @@
                 <br>
                 <hr>
                   <h4>Información Personal</h4>
-                     <b>Nombre: John Doe</b><br><br>
-                     <b>Cédula: 9-9999-9999</b><br><br>
-                     <b>Correo: Usuario@utp.ac.pa</b><br><br>
-                     <b>Telefono: 6666-6666</b><br>
+                     <b>Nombre: <?php echo "<b>$nombre</b>"; ?></b><br><br>
+                     <b>Cédula: <?php echo "<b>$cedula</b>"; ?></b><br><br>
+                     <b>Correo: <?php echo "<b>$email</b>"; ?></b><br><br>
+                     <b>Departamento: <?php echo "<b>$departamento</b>"; ?></b><br>
              </div>
           </div>
         </div>
