@@ -20,7 +20,7 @@
 		$dep = substr($id_str, 0, 3);
 		if($dep == "usr"){
 			//dirige a la página de usuario
-			header('Location:../page/calendarioprin.html');
+			header('Location:../page/calendarioprin.php');
 		}else{
 			//dirige a la página de admins
 			header('Location:../page/solicitud_pendiente.html');

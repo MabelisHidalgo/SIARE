@@ -29,45 +29,7 @@
          </div>
       </header> 
 <!-- Inicio Barra de navegacion -->
-     <section>
-              <nav class="navbar navbar-expand-lg navbar-dark py-3">
-                 <a class="navbar-brand" href="#">-SIARE-</a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse"
-                            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                            aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-
-                   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                         <ul class="navbar-nav mr-auto">
-
-                              <li class="nav-item">
-                                 <a class="nav-link" href="../page/solicitud_pendiente.html">Solicitudes Pendientes</a>
-                              </li>
-                              <li class="nav-item">
-                                 <a class="nav-link" href="../page/solicitud_historial.html">Historial de Solicitudes</a>
-                              </li>
-
-                              <li class="nav-item">
-                                 <a class="nav-link" href="../page/calendar.html">Calendario</a>
-                              </li>
-
-                              <li class="nav-item">
-                                 <a class="nav-link" href="../page/estadistica.html">Estadísticas</a>
-                              </li>
-
-                              <li class="nav-item">
-                                 <a class="nav-link" href="../page/perfil_adm.html">Perfil</a>
-                              </li>
-                        </ul>
-
-                            <button class="btn btn-primary btn-sm custom-btn">
-                               <a class="nav-link text-white" href="../php/cerrar.php">Cerrar Sesión</a>
-                             </button>
-                   </div>
-                   </div>
-             </nav>
-      </section>
+<?php include "../page/Includes/navbarAdm.php"; ?>
 <!--fin de barra de navegación-->
   <br><br>
   <h3>Calendario de Eventos</h3>
@@ -135,18 +97,7 @@
 <!--Fin Primer Div-->
 
 <!-- Footer -->
-     <footer class="page-footer font-small pt-4">
-         <!-- Footer Elements -->
-         <div class="container">
-         </div>
-        <!-- Footer Elements -->
-
-        <!-- Copyright -->
-         <div class="footer-copyright text-center ">© 2019 Copyright
-           <br><a href="">--------</a>
-         </div>
-        <!-- Copyright -->
-     </footer>
+<?php include "../page/Includes/footer.php"; ?>
 <!-- Footer -->
 <!-- JS -->
     <script src="../js/jquery-3.3.1.slim.min.js"></script>

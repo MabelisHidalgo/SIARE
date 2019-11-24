@@ -7,19 +7,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 <!--font-->
     <link href='https://fonts.googleapis.com/css?family=Didact Gothic' rel='stylesheet'>
-
 <!--CSS-->
-    <link href="../css/esqueleto.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="../css/esqueleto.css" type="text/css">
     <link rel="stylesheet" type="text/css" href="../css/standard.css">
 
 <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="../css/bootstrap.min.css">
 
-	<title>Historial de Solicitudes</title>
+	<title>Solicitudes por Revisar</title>
 
 </head>
 <body class="body">
- <!--header-->
+<!--header-->
       <header>
          <div class="container text-center py-3">
              <div class="col-sm-12">
@@ -30,47 +29,11 @@
          </div>
       </header>
 <!-- Inicio Barra de navegacion -->
-     <section>
-              <nav class="navbar navbar-expand-lg navbar-dark py-3">
-                 <a class="navbar-brand" href="#">-SIARE-</a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse"
-                            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                            aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-
-                   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                         <ul class="navbar-nav mr-auto">
-
-                              <li class="nav-item">
-                                 <a class="nav-link text-white" href="../page/solicitud_pendiente.html">Solicitudes Pendientes</a>
-                              </li>
-                              <li class="nav-item">
-                                 <a class="nav-link text-white" href="../page/solicitud_historial.html">Historial de Solicitudes</a>
-                              </li>
-
-                              <li class="nav-item">
-                                 <a class="nav-link text-white" href="../page/calendar.html">Calendario</a>
-                              </li>
-
-                              <li class="nav-item">
-                                 <a class="nav-link text-white" href="../page/estadistica.html">Estadísticas</a>
-                              </li>
-
-                              <li class="nav-item">
-                                 <a class="nav-link text-white" href="../page/perfil_adm.html">Perfil</a>
-                              </li>
-                        </ul>
-                            <button class="btn btn-primary btn-sm custom-btn">
-                               <a class="nav-link text-white" href="../php/cerrar.php">Cerrar Sesión</a>
-                             </button>
-                   </div>
-             </nav>
-      </section>
+<?php include "../page/Includes/navbarAdm.php"; ?>
 <!-- Fin Barra de navegacion -->
 
 <!----------------------CONTENIDO------------------------->
-<h3 class="py-3">Historial de Solicitudes</h3>
+<h3 class="py-3">Solicitudes Pendientes</h3>
 <!---------------------Formulario de opciones----------------------->
 	<div class="container-fluid mx-2 pb-3">
     <select action="#.php" method="POST" name="#" id="opCuadro">
@@ -83,7 +46,7 @@
 <div class="container justify-content-md-center h-100">
     <div class="row justify-content-around">
       <div class="col-4" id="fondoSol">
-        <h2>HISTORIAL DE SOLICITUDES</h2>
+        <h2>BANDEJA DE ENTRADA</h2>
         <form action="/action_page.php">
             <select name="#" size="11" id="histoCuadro">
               <option value="1">duis veniam quid nulla labore</option>
@@ -95,6 +58,8 @@
               <option value="">minim nisi aliqua tempor duis</option>
               <option value="">minim nisi aliqua tempor duis</option>
               <option value="">minim nisi aliqua tempor duis</option>
+              <option value="">fore irure quorum summis quid</option>
+              <option value="">fore irure quorum summis quid</option>
               <option value="">fore irure quorum summis quid</option>
               <option value="">fore irure quorum summis quid</option>
             </select>
@@ -122,33 +87,26 @@
         </nav>
         </div>
 
-            <div class="col-6" id="fondoSol" style="max-width: 600px;">
-              <h2>DATOS DE LA SOLICITUD</h2>
-            <!------------------Información sobre la solicitud--------------------->
-                <ul id="textoNegrita">
-                  <li>TITULO DEL EVENTO</li>
-                  <li>LUGAR: illum nisi cillum aute</li>
-                  <li>FECHA: eram quae fore amet</li>
-                  <li>HORA: ipsum nulla anim malis</li>
-                  <li>NOMBRE DEL SOLICITANTE: enim nulla cillum enim</li>
-                  <li>DETALLES: quem quorum tempor irure</li>
-                  <li>ESTADO DEL EVENTO: tempor quorum legam multos</li>
-                  <li>ENCARGADO DE LA ACEPTACIÓN O RECHAZO DEL EVENTO: anim velit esse amet</li>
-                </ul>
+            <div class="col-6" id="fondoSol" style="max-width:600px;">
+              <h2>INFORMACIÓN DEL EVENTO</h2>
+                <form action="#">
+                  <h6>dolor legam sint culpa illum magna elit aliqua quem legam
+                  <h6>dolor legam sint culpa illum magna elit aliqua quem legam
+                  <h6>dolor legam sint culpa illum magna elit aliqua quem legam
+                  <!--<input type="submit" value="Ver Calendario" name="VerCalendario">-->
+                  <button class="btn btn-primary custom-btn btn-block my-3"><a class="nav-link text-white" href="../page/calendar.html">Ver Calendario</a></button>
+                </form>
+              <!------------------Cuadro de texto--------------------->
+              <textarea rows="5" cols="75" placeholder="Escriba sus comentarios aquí"></textarea><br>
+              <input class="btn btn-primary custom-btn btn-space my-3" type="submit" name="Aceptar" value="Aceptar">
+              <input class="btn btn-primary custom-btn btn-space my-3" type="submit" name="Rechazar" value="Rechazar">
+
 
             </div>
       </div>
 </div>
 <!------------------------------INICIO DEL FOOTER------------------------------>
-     <footer class="page-footer font-small text-white py-3">
-         <!-- Footer Elements -->
-         <div class="container"></div>
-        <!-- Footer Elements -->
-
-        <!-- Copyright -->
-         <div class="footer-copyright text-center ">© 2019 Copyright</div>
-        <!-- Copyright -->
-     </footer>
+<?php include "../page/Includes/footer.php"; ?>
 <!-- JS -->
     <script src="../js/jquery-3.3.1.slim.min.js"></script>
     <script src="../js/popper.min.js"></script>
