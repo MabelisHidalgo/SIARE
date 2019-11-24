@@ -1,5 +1,6 @@
 <?php include "db.php"; ?>
 <?php
+    session_start();
 
     function Crear_Datos($nombre, $apellido, $cedula, $correo, $departamento, $password, $rep_password){
 
@@ -53,7 +54,7 @@
 
     }
 
-    function generateRandomString($length = 10) {
+    function generateRandomString($length = 9) {
         $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
         $charactersLength = strlen($characters);
         $randomString = '';

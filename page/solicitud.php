@@ -1,3 +1,17 @@
+<?php session_start(); ?>
+<?php include "../php/db.php"; ?>
+<?php 
+global $connection;
+$id = $_SESSION['id'];
+$sql = "SELECT ID FROM SOLICITUD WHERE UsuarioID = '$id'";
+$result = mysqli_query($connection, $sql);
+
+
+$count = mysqli_num_rows($result);
+
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -41,97 +55,33 @@
                           <div class="dropdown">
             <div class="overflow-auto">
             <!-- Solicitud 1 -->    
-            <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                1. Solicitud 1
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="infosolicitud.html">Solicitud de Espacio</a>
-                        <a class="dropdown-item" href="infosolicitud.html">Solicitud de Prensa</a>
-                        <a class="dropdown-item" href="infosolicitud.html">Solicitud de Mobiliario</a>
-            </div><br><br>
+            <form action="../page/infosolicitud.php" method="post">
+          
             
-            <!-- Solicitud 2 -->    
-            <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                2. Solicitud 2
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="infosolicitud.html">Solicitud de Espacio</a>
-                        <a class="dropdown-item" href="infosolicitud.html">Solicitud de Prensa</a>
-                        <a class="dropdown-item" href="infosolicitud.html">Solicitud de Mobiliario</a>
-            </div><br><br>
-                
-            <!-- Solicitud 3 -->    
-            <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                3. Solicitud 3
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="infosolicitud.html">Solicitud de Espacio</a>
-                        <a class="dropdown-item disabled" href="infosolicitud.html">Solicitud de Prensa</a>
-                        <a class="dropdown-item disabled" href="infosolicitud.html">Solicitud de Mobiliario</a>
-            </div><br><br>
-                <!-- Solicitud 4 -->    
-            <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                4. Solicitud 4
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="infosolicitud.html">Solicitud de Espacio</a>
-                        <a class="dropdown-item disabled" href="infosolicitud.html">Solicitud de Prensa</a>
-                        <a class="dropdown-item disabled" href="infosolicitud.html">Solicitud de Mobiliario</a>
-            </div><br><br>
-                <!-- Solicitud 5 -->    
-            <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                5. Solicitud 5
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="infosolicitud.html">Solicitud de Espacio</a>
-                        <a class="dropdown-item disabled" href="infosolicitud.html">Solicitud de Prensa</a>
-                        <a class="dropdown-item disabled" href="infosolicitud.html">Solicitud de Mobiliario</a>
-            </div><br><br>
-                <!-- Solicitud 6 -->    
-            <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                6. Solicitud 6
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="infosolicitud.html">Solicitud de Espacio</a>
-                        <a class="dropdown-item disabled" href="infosolicitud.html">Solicitud de Prensa</a>
-                        <a class="dropdown-item disabled" href="infosolicitud.html">Solicitud de Mobiliario</a>
-            </div><br><br>
-                <!-- Solicitud 7 -->    
-            <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                7. Solicitud 7
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="infosolicitud.html">Solicitud de Espacio</a>
-                        <a class="dropdown-item disabled" href="infosolicitud.html">Solicitud de Prensa</a>
-                        <a class="dropdown-item disabled" href="infosolicitud.html">Solicitud de Mobiliario</a>
-            </div><br><br>
-                <!-- Solicitud 8 -->    
-            <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                8. Solicitud 8
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="infosolicitud.html">Solicitud de Espacio</a>
-                        <a class="dropdown-item disabled" href="infosolicitud.html">Solicitud de Prensa</a>
-                        <a class="dropdown-item disabled" href="infosolicitud.html">Solicitud de Mobiliario</a>
-            </div><br><br>
-                <!-- Solicitud 9 -->    
-            <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                9. Solicitud 9
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="infosolicitud.html">Solicitud de Espacio</a>
-                        <a class="dropdown-item disabled" href="infosolicitud.html">Solicitud de Prensa</a>
-                        <a class="dropdown-item disabled" href="infosolicitud.html">Solicitud de Mobiliario</a>
-            </div><br><br>
-                 <!-- Solicitud 10 -->    
-            <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                10. Solicitud 10
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="infosolicitud.html">Solicitud de Espacio</a>
-                        <a class="dropdown-item disabled" href="infosolicitud.html">Solicitud de Prensa</a>
-                        <a class="dropdown-item disabled" href="infosolicitud.html">Solicitud de Mobiliario</a>
-            </div><br><br>
+            
+            <?php 
+            if($count == 0){
+              echo "<p>sin solicitud de momento</p>";
+              
+            }else{
+              while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
+                $test = $row["ID"]; ?>
+
+                <input class="btn btn-primary custom-btn" type="submit" name="dato" value="<?php echo "$test"; ?>"><br><br><br>
+
+                <?php 
+              }
+            }
+            
+            
+            
+            
+            ?>
+
+            </form>
+
+            
+            
                 
            </div>
           </div>

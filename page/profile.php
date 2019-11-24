@@ -63,7 +63,7 @@
                       <input type="file" name="pic" accept="image/*">
                       <input type="submit" value="Cambiar Imagen">
                     </form>
-                <br>
+                <br> 
                 <button class="btn btn-primary custom-btn">Editar perfil</button>
                 <br><br>
                 <button class="btn btn-primary custom-btn ">Cambiar Contraseña</button>

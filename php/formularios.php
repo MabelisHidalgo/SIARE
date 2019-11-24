@@ -37,7 +37,7 @@
         
         $result = mysqli_query($connection, $query);
 
-        header('Location:../page/calendarioprin.html');
+        header('Location:../page/calendarioprin.php');
 
 
     }
