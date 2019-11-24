@@ -23,7 +23,7 @@
 			header('Location:../page/calendarioprin.php');
 		}else{
 			//dirige a la página de admins
-			header('Location:../page/solicitud_pendiente.html');
+			header('Location:../page/solicitud_pendiente.php');
 		}
 	}else {
 		header('Location:../index.html');
