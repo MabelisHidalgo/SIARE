@@ -13,7 +13,7 @@
   $cedula = $row['Cedula'];
   $departamento = $row['Departamento'];
 
-  $nombre .= $apellido;
+  $nombre .= " ". $apellido;
 
 
 
