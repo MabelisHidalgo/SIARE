@@ -50,7 +50,7 @@ $count = mysqli_num_rows($result);
       <h3>Informacion de Solicitudes</h3>
       <br>
     <div class="container">
-      <div class="clas-col-12">
+      <div class="col-4">
           <div class="boxsol">
                           <div class="dropdown">
             <div class="overflow-auto">

@@ -2,7 +2,7 @@
 
     <!-- Copyright -->
     <div class="text-center">© 2019 Copyright
-      <br><a href="">--------</a>
+      <br> 
     </div>
     <!-- Copyright -->
   </footer>
