@@ -1,4 +1,28 @@
 <?php session_start(); ?>
+<?php include "../php/db.php"; ?>
+<?php 
+
+//Genera la lista de nombres de  eventos
+  $usuario = $_SESSION["usuario"];
+  global $connection;
+  $datos = array();
+  //$result_2 = array("Nombre_Evento"=>"", "Fecha" => "", "Hora_Inicio" => "", "Hora_fin" => "", "Description" => "", "Asistencia" => "");
+  if($usuario == "Administrativo"){
+    //query para tomar el ID y el nombre del evento
+    $query_1 = "SELECT Nombre_Evento, ID FROM SOLICITUD WHERE EStado = 'pendiente'";
+    $result_1 = mysqli_query($connection, $query_1);
+  }
+
+  //el post del formulario 1, para escoger el evento que se quiere ver
+  if(isset($_POST["submit1"])){
+    $option = $_POST['option'];
+    //query para tomar los datos del de la solicitud 
+    $query_2 = "SELECT Nombre_Evento, Fecha, Hora_Inicio, Hora_fin, Description, Asistencia FROM SOLICITUD WHERE ID = '$option'";
+    $result_2 = mysqli_query($connection, $query_2);
+    $datos = mysqli_fetch_array($result_2);
+  }
+
+?>  
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -48,59 +72,60 @@
     <div class="row justify-content-around">
       <div class="col-4" id="fondoSol">
         <h2>BANDEJA DE ENTRADA</h2>
-        <form action="/action_page.php">
-            <select name="#" size="11" id="histoCuadro">
-              <option value="1">duis veniam quid nulla labore</option>
-              <option value="">fore irure quorum summis quid</option>
-              <option value="">fore quis sint eram quis</option>
-              <option value="">minim nisi aliqua tempor duis</option>
-              <option value="">fore irure quorum summis quid</option>
-              <option value="">duis veniam quid nulla labore</option>
-              <option value="">minim nisi aliqua tempor duis</option>
-              <option value="">minim nisi aliqua tempor duis</option>
-              <option value="">minim nisi aliqua tempor duis</option>
-              <option value="">fore irure quorum summis quid</option>
-              <option value="">fore irure quorum summis quid</option>
-              <option value="">fore irure quorum summis quid</option>
-              <option value="">fore irure quorum summis quid</option>
+        <form method = "post" action="solicitud_pendiente.php">
+            <select name="option" size="11" id="histoCuadro">
+              <?php 
+                while($count = mysqli_fetch_array($result_1, MYSQLI_ASSOC)){
+                  $nombre = $count["Nombre_Evento"];
+                  $id = $count["ID"];
+              ?>
+
+                  <option value="<?php echo "$id"; ?>"> <?php echo "$nombre"; ?> </option>
+
+               <?php }  ?>
+      
             </select>
+
+            <input class="btn btn-primary custom-btn" type="submit" name="submit1" value="Buscar" />
           <br>
         </form>
         <!-----------------Paginación(los botocitos que te llevan a la siguiente pagina)------------------>
-        <nav aria-label="Paginacion">
-            <ul class="pagination justify-content-center my-2">
-                  <li class="page-item">
-                      <a class="page-link" href="#" aria-label="Previous">
-                        <span aria-hidden="true">&laquo;</span>
-                        <span class="sr-only">Previous</span>
-                      </a>
-                  </li>
-                  <li class="page-item"><a class="page-link" href="#">1</a></li>
-                      <li class="page-item"><a class="page-link" href="#">2</a></li>
-                      <li class="page-item"><a class="page-link" href="#">3</a></li>
-                      <li class="page-item">
-                          <a class="page-link" href="#" aria-label="Next">
-                            <span aria-hidden="true">&raquo;</span>
-                            <span class="sr-only">Next</span>
-                          </a>
-                  </li>
-            </ul>
-        </nav>
+        
         </div>
-
             <div class="col-6" id="fondoSol" style="max-width:600px;">
               <h2>INFORMACIÓN DEL EVENTO</h2>
-                <form action="#">
-                  <h6>dolor legam sint culpa illum magna elit aliqua quem legam
-                  <h6>dolor legam sint culpa illum magna elit aliqua quem legam
-                  <h6>dolor legam sint culpa illum magna elit aliqua quem legam
+                  
+              <?php if(empty($datos) ){ ?>
+
+                <h6>Nombre del evento: 
+              <h6>Fecha del evento: 
+              <h6>Hora de entrada: 
+              <h6>Hora de salida: 
+              <h6>Aproximado de   asistencia: 
+              <h6>Descripción: 
+                
+              <?php }else{ ?>
+                  <h6>Nombre del evento: <?php echo "$datos[0]" ; ?>  
+                  <h6>Fecha del evento: <?php echo "$datos[1]"; ?> 
+                  <h6>Hora de entrada: <?php echo "$datos[2]"; ?>
+                  <h6>Hora de salida: <?php echo "$datos[3]"; ?>
+                  <h6>Aproximado de   asistencia: <?php echo "$datos[5]"; ?>
+                  <h6>Descripción: <?php echo "$datos[4]"; ?>
+                
+                <?php } ?>
+
+
+
+                  
                   <!--<input type="submit" value="Ver Calendario" name="VerCalendario">-->
                   <button class="btn btn-primary custom-btn btn-block my-3"><a class="nav-link text-white" href="../page/calendar.html">Ver Calendario</a></button>
-                </form>
+                
               <!------------------Cuadro de texto--------------------->
-              <textarea rows="5" cols="75" placeholder="Escriba sus comentarios aquí"></textarea><br>
-              <input class="btn btn-primary custom-btn btn-space my-3" type="submit" name="Aceptar" value="Aceptar">
-              <input class="btn btn-primary custom-btn btn-space my-3" type="submit" name="Rechazar" value="Rechazar">
+              <form action="">
+                <textarea rows="5" cols="75" placeholder="Escriba sus comentarios aquí"></textarea><br>
+                <input class="btn btn-primary custom-btn btn-space my-3" type="submit" name="Aceptar" value="Aceptar">
+                <input class="btn btn-primary custom-btn btn-space my-3" type="submit" name="Rechazar" value="Rechazar">
+              </form>
 
 
             </div>
