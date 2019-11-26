@@ -1,4 +1,25 @@
 <?php session_start(); ?>
+<?php include "../php/db.php"; ?>
+<?php 
+  global $connection;
+  $usuario = $_SESSION["usuario"];
+  $datos = array();
+  if($usuario == "Administrativo"){
+    //query para tomar el ID y el nombre del evento
+    $query = "SELECT Nombre_Evento, ID FROM SOLICITUD WHERE EStado <> 'pendiente'";
+    $result = mysqli_query($connection, $query);
+  }
+
+  if(isset($_POST["submit"])){
+    $option = $_POST['option'];
+    //query para tomar los datos del de la solicitud 
+    $query = "SELECT Nombre_Evento, Lugar, Fecha, Hora_Inicio, Hora_fin, Description, Asistencia, EStado FROM SOLICITUD WHERE ID = '$option'";
+    $result_1 = mysqli_query($connection, $query);
+    $datos = mysqli_fetch_array($result_1);
+  }
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -49,57 +70,55 @@
     <div class="row justify-content-around">
       <div class="col-4" id="fondoSol">
         <h2>HISTORIAL DE SOLICITUDES</h2>
-        <form action="/action_page.php">
-            <select name="#" size="11" id="histoCuadro">
-              <option value="1">duis veniam quid nulla labore</option>
-              <option value="">fore irure quorum summis quid</option>
-              <option value="">fore quis sint eram quis</option>
-              <option value="">minim nisi aliqua tempor duis</option>
-              <option value="">fore irure quorum summis quid</option>
-              <option value="">duis veniam quid nulla labore</option>
-              <option value="">minim nisi aliqua tempor duis</option>
-              <option value="">minim nisi aliqua tempor duis</option>
-              <option value="">minim nisi aliqua tempor duis</option>
-              <option value="">fore irure quorum summis quid</option>
-              <option value="">fore irure quorum summis quid</option>
+        <form action="../page/solicitud_historial.php" method="post">
+            <select name="option" size="11" id="histoCuadro">
+            <?php 
+                while($count = mysqli_fetch_array($result, MYSQLI_ASSOC)){
+                  $nombre = $count["Nombre_Evento"];
+                  $id = $count["ID"];
+              ?>
+
+                  <option value="<?php echo "$id"; ?>"> <?php echo "$nombre"; ?> </option>
+
+               <?php }  ?>
             </select>
           <br>
+          <input class="btn btn-primary custom-btn" type="submit" name="submit" value="Buscar" />
         </form>
         <!-----------------Paginación(los botocitos que te llevan a la siguiente pagina)------------------>
-        <nav aria-label="Paginacion">
-            <ul class="pagination justify-content-center my-2">
-                  <li class="page-item">
-                      <a class="page-link" href="#" aria-label="Previous">
-                        <span aria-hidden="true">&laquo;</span>
-                        <span class="sr-only">Previous</span>
-                      </a>
-                  </li>
-                  <li class="page-item"><a class="page-link" href="#">1</a></li>
-                      <li class="page-item"><a class="page-link" href="#">2</a></li>
-                      <li class="page-item"><a class="page-link" href="#">3</a></li>
-                      <li class="page-item">
-                          <a class="page-link" href="#" aria-label="Next">
-                            <span aria-hidden="true">&raquo;</span>
-                            <span class="sr-only">Next</span>
-                          </a>
-                  </li>
-            </ul>
-        </nav>
+        
         </div>
 
             <div class="col-6" id="fondoSol" style="max-width: 600px;">
               <h2>DATOS DE LA SOLICITUD</h2>
             <!------------------Información sobre la solicitud--------------------->
-                <ul id="textoNegrita">
+                
+            <?php if(empty($datos) ){ ?>
+
+              <<ul id="textoNegrita">
                   <li>TITULO DEL EVENTO</li>
-                  <li>LUGAR: illum nisi cillum aute</li>
-                  <li>FECHA: eram quae fore amet</li>
-                  <li>HORA: ipsum nulla anim malis</li>
-                  <li>NOMBRE DEL SOLICITANTE: enim nulla cillum enim</li>
-                  <li>DETALLES: quem quorum tempor irure</li>
-                  <li>ESTADO DEL EVENTO: tempor quorum legam multos</li>
-                  <li>ENCARGADO DE LA ACEPTACIÓN O RECHAZO DEL EVENTO: anim velit esse amet</li>
+                  <li>LUGAR: ******</li>
+                  <li>FECHA: ******</li>
+                  <li>HORA: ******</li>
+                  <li>NOMBRE DEL SOLICITANTE: ******</li>
+                  <li>DETALLES: ******</li>
+                  <li>ESTADO DEL EVENTO: ******</li>
+                  <li>ENCARGADO DE LA ACEPTACIÓN O RECHAZO DEL EVENTO: ******</li>
+            </ul>
+                
+              <?php }else{ ?>
+                <ul id="textoNegrita">
+                  <li> <?php echo "$datos[0]" ; ?>  </li>
+                  <li>LUGAR: <?php echo "$datos[1]" ; ?>  </li>
+                  <li>FECHA: <?php echo "$datos[2]" ; ?>  </li>
+                  <li>HORA DE ENTRADA: <?php echo "$datos[3]" ; ?>  </li>
+                 <!-- <li>NOMBRE DEL SOLICITANTE: enim nulla cillum enim</li> -->
+                  <li>HORA DE SALIDA: <?php echo "$datos[4]" ; ?>  </li>
+                  <li>ASISTENCIA: <?php echo "$datos[5]" ; ?>  </li>
+                  <li>DESCRIPCIÓN: <?php echo "$datos[6]" ; ?>  </li>
+                  <li>ESTADO: <?php echo "$datos[7]" ; ?>  </li>
                 </ul>
+              <?php } ?>
 
             </div>
       </div>
