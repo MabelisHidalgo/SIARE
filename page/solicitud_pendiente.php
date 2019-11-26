@@ -4,6 +4,7 @@
 
 //Genera la lista de nombres de  eventos
   $usuario = $_SESSION["usuario"];
+  $_SESSION["id_pendiente"] = "";
   global $connection;
   $datos = array();
   //$result_2 = array("Nombre_Evento"=>"", "Fecha" => "", "Hora_Inicio" => "", "Hora_fin" => "", "Description" => "", "Asistencia" => "");
@@ -16,6 +17,7 @@
   //el post del formulario 1, para escoger el evento que se quiere ver
   if(isset($_POST["submit1"])){
     $option = $_POST['option'];
+    $_SESSION["id_pendiente"] = $option;
     //query para tomar los datos del de la solicitud 
     $query_2 = "SELECT Nombre_Evento, Fecha, Hora_Inicio, Hora_fin, Description, Asistencia FROM SOLICITUD WHERE ID = '$option'";
     $result_2 = mysqli_query($connection, $query_2);
@@ -121,7 +123,7 @@
                   <button class="btn btn-primary custom-btn btn-block my-3"><a class="nav-link text-white" href="../page/calendar.html">Ver Calendario</a></button>
                 
               <!------------------Cuadro de texto--------------------->
-              <form action="">
+              <form action="../php/siono.php" method = "post">
                 <textarea rows="5" cols="75" placeholder="Escriba sus comentarios aquí"></textarea><br>
                 <input class="btn btn-primary custom-btn btn-space my-3" type="submit" name="Aceptar" value="Aceptar">
                 <input class="btn btn-primary custom-btn btn-space my-3" type="submit" name="Rechazar" value="Rechazar">
