@@ -6,7 +6,8 @@
  //validar datos
  	global $connection;
    	$correo=$_POST['email'];
-   	$contra=$_POST['pass'];
+	   $contra=$_POST['pass'];
+	$contra = md5($contra);
 
    	$query = "SELECT ID, Departamento FROM USUARIOS WHERE Email = '$correo' and Password = '$contra'";
 	$result = mysqli_query($connection, $query); 
