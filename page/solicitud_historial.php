@@ -95,7 +95,7 @@
                 
             <?php if(empty($datos) ){ ?>
 
-              <<ul id="textoNegrita">
+              <ul id="textoNegrita">
                   <li>TITULO DEL EVENTO</li>
                   <li>LUGAR: ******</li>
                   <li>FECHA: ******</li>

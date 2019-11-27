@@ -2,14 +2,17 @@
 <?php include "../php/db.php"; ?>
 <?php 
 global $connection;
-$id = $_SESSION['id'];
-$sql = "SELECT ID FROM SOLICITUD WHERE UsuarioID = '$id'";
+$datos = array();
+$usuario = $_SESSION["id"];
+$sql = "SELECT Nombre_Evento, ID FROM SOLICITUD WHERE UsuarioID = '$usuario'";
 $result = mysqli_query($connection, $sql);
 
-
-$count = mysqli_num_rows($result);
-
-
+if(isset($_POST["submit"])){
+  $option = $_POST['option'];
+  $query = "SELECT Nombre_Evento, Fecha, Hora_Inicio, Hora_fin, Lugar, EStado FROM SOLICITUD WHERE ID = '$option'";
+    $result_1 = mysqli_query($connection, $query);
+    $datos = mysqli_fetch_array($result_1);
+}
 
 ?>
 <!DOCTYPE html>
@@ -46,49 +49,61 @@ $count = mysqli_num_rows($result);
   <?php include "../page/Includes/navbar.php"; ?>
 <!-- Fin Barra de navegacion -->
 <!--Primer Div -->
-      <br><br>
-      <h3>Informacion de Solicitudes</h3>
-      <br>
-    <div class="container">
-      <div class="col-4">
-          <div class="boxsol">
-                          <div class="dropdown">
-            <div class="overflow-auto">
-            <!-- Solicitud 1 -->    
-            <form action="../page/infosolicitud.php" method="post">
-          
-            
-            
-            <?php 
-            if($count == 0){
-              echo "<p>sin solicitud de momento</p>";
-              
-            }else{
-              while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
-                $test = $row["ID"]; ?>
+<br><br>
+ <h3>Informacion de Solicitudes</h3>
+ <br>
+     <div class="class container">
+          <div class="class row">
+              <div class="col-4">
+                <div class="class boxsol">
+                    <form action="../page/solicitud.php" method = "post">
+                        <select name="option" size="11" id="histoCuadro">
+                        <?php 
+                             while($count = mysqli_fetch_array($result, MYSQLI_ASSOC)){
+                              $nombre = $count["Nombre_Evento"];
+                              $id = $count["ID"];
+                        ?>
 
-                <input class="btn btn-primary custom-btn" type="submit" name="dato" value="<?php echo "$test"; ?>"><br><br><br>
+                            <option value="<?php echo "$id"; ?>"> <?php echo "$nombre"; ?> </option>
 
-                <?php 
-              }
-            }
-            
-            
-            
-            
-            ?>
+                        <?php }  ?>
+                        </select>
+                       <br>
+                        <input class="btn btn-primary custom-btn" type="submit" name="submit" value="Ver Solicitud">
+                       
+                  </form>
+                </div>
+              </div>
+              <div class="col-8">
+                 <div class="class boxsol">
+                   <?php if(empty($datos)){  ?>
 
-            </form>
-
-            
-            
-                
-           </div>
+                    <h4>Solicitud #00001</h4>
+                    <br>
+                      <b>Nombre del evento: </b><br>
+                      <b>Fecha: </b><br>
+                      <b>Hora de entrada: </b><br>
+                      <b>Hora de salida: </b><br>
+                      <b>Lugar:</b><br>
+                    <hr>
+                    <h4>Estado de solicitud: </h4>
+                    <br>
+                    <?php }else{ ?>
+                      <h4>Solicitud #<?php echo "$option"; ?></h4>
+                    <br>
+                      <b>Nombre del evento: <?php echo "$datos[0]" ; ?> </b><br>
+                      <b>Fecha: <?php echo "$datos[1]" ; ?></b><br>
+                      <b>Hora de entrada: <?php echo "$datos[2]" ; ?></b><br>
+                      <b>Hora de salida: <?php echo "$datos[3]" ; ?></b><br>
+                      <b>Lugar: <?php echo "$datos[4]" ; ?></b><br>
+                    <hr>
+                    <h4>Estado de solicitud: <?php echo "$datos[5]" ; ?></h4>
+                    <br>
+                    <?php } ?>
+                 </div>
+              </div>
           </div>
-          </div>    
-      </div>
-   </div>
-              
+     </div>
 <!--Fin Primer Div-->
 
 <!-- Footer -->
