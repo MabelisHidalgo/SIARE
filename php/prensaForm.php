@@ -1,7 +1,9 @@
 
 <?php include "../php/db.php"; ?>
 <?php include "funciones.php";  ?>
+<?php include "redirect.php";  ?>
 <?php 
+$_SESSION["prensa"] = false;
 //$_SESSION["solicitud_actual"] = "8JEo0qpQm"; 
 if(isset($_POST['submit'])){
     global $connection;
@@ -20,10 +22,13 @@ if(isset($_POST['submit'])){
     $result = mysqli_query($connection, $query);
 
     $solicitud_actual = $_SESSION["solicitud_actual"];
-    echo "<p>$solicitud_actual</p>";
 
     $query2 = "UPDATE SOLICITUD SET Form_Prensa = '$id' WHERE ID='$solicitud_actual'";
     $result2 = mysqli_query($connection, $query2);
+
+
+    $direct = donde();
+    header('Location:../page/'.$direct);
 
 }
 
