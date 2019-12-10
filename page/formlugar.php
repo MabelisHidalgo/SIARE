@@ -115,13 +115,13 @@
                   <div class="col-sm-12  col-md-8">
                      Agregar mobiliario <input type="checkbox" name="" />
                      <br /><br />
-                     <button class="btn btn-primary btn-sm custom-btn">
-                        <a class="nav-link text-white" href="../page/formmobiliario.php">Ver Formulario</a>
+                     <!--<button class="btn btn-primary btn-sm custom-btn"> 
+                        <a class="nav-link text-white" href="../page/formmobiliario.php">Ver Formulario</a>-->
                      </button>
                      <br /><br />
                      Agregar prensa <input type="checkbox" name="" /> <br /><br />
-                     <button class="btn btn-primary btn-sm custom-btn">
-                        <a class="nav-link text-white" href="../page/formprensa.php">Ver Formulario</a>
+                     <!--<button class="btn btn-primary btn-sm custom-btn"> 
+                        <a class="nav-link text-white" href="../page/formprensa.php">Ver Formulario</a>-->
                      </button>
                   </div>
                   <div class="col-sm-12  col-md-4 text-center py-5 my-3">

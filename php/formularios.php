@@ -3,6 +3,7 @@
 <?php
     //inicio de session
     session_start();
+    $_SESSION["solicitud_actual"] = "";
 
     if(isset($_POST['submit'])){
         $id = generateRandomString();
@@ -36,6 +37,7 @@
         $query .= "VALUES ('$id', '$lugar', '$fecha', '$entrada', '$salida', '$nombreEvento', '$descripcion', $asistencia, '$estado', NULL, NULL, '$usuario')";
         
         $result = mysqli_query($connection, $query);
+        $_SESSION["solicitud_actual"] = $id;
 
         header('Location:../page/calendarioprin.php');
 
