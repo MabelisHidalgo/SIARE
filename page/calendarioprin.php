@@ -1,25 +1,127 @@
 <?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+<!-- meta tags -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+<!--font-->
+      <link href='https://fonts.googleapis.com/css?family=Didact Gothic' rel='stylesheet'>
+<!-- Bootstrap CSS -->
+      <link rel="stylesheet" href="../css/bootstrap.min.css">
+<!--CSS-->
+      <link rel="stylesheet" type="text/css" href="../css/standard.css">
+      <link rel="stylesheet" type="text/css" href="../css/calendar.css">
+<!--Calendar CSS-->
+    <link href='../packages/core/main.css' rel='stylesheet' />
+    <link href='../packages/daygrid/main.css' rel='stylesheet' />
+    <link href='../packages/timegrid/main.css' rel='stylesheet' />
+    <link href='../packages/list/main.css' rel='stylesheet' />
+<!--Calendar JS-->
+    <script src='../packages/core/main.js'></script>
+    <script src='../packages/interaction/main.js'></script>
+    <script src='../packages/daygrid/main.js'></script>
+    <script src='../packages/timegrid/main.js'></script>
+    <script src='../packages/list/main.js'></script>
+    <script src='../packages/core/locales/es-us.js'></script>
+    <script>
 
-<head>
-  <!-- meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!--font-->
-  <link href='https://fonts.googleapis.com/css?family=Didact Gothic' rel='stylesheet'>
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="../css/bootstrap.min.css">
-  <!--CSS-->
-  <link rel="stylesheet" type="text/css" href="../css/standard.css">
-  <!--Calendar CSS-->
-  <link rel="stylesheet" type="text/css" href="../css/calendar.css">
+  document.addEventListener('DOMContentLoaded', function() {
+    var calendarEl = document.getElementById('calendar');
 
+    var calendar = new FullCalendar.Calendar(calendarEl, {
+      plugins: [ 'interaction', 'dayGrid', 'timeGrid', 'list' ],
+     locale:'es',
+      header: {
+        left: 'prev,next today',
+        center: 'title',
+        right: 'dayGridMonth,timeGridWeek,timeGridDay,listMonth'
+        
+      },
+      nowindicator:true,
+      navLinks: true, // puedes hacer clic en los dias para navegar sus eventos
+      businessHours: true, // muestra ciertas horas en los que se pueden programar eventos, 9-5 por default
+      editable: false, //Permite arrastrar eventos
+        selectable: false, //Permite seleccionar fechas
+        
+      events: [  //Insertar eventos aqui
+          {
+            url: '/myfeed.php',  //Los eventos pueden tener varios source, ver aqui https://fullcalendar.io/docs/event-model y https://fullcalendar.io/docs/event-source-object y https://fullcalendar.io/docs/events-json-feed
+          },
+        {
+          title: 'Conferencia Ejemplo',
+          start: '2019-12-03T13:00:00',
+          constraint: 'businessHours'
+        },
+        {
+          title: 'Presentacion Ejemplo',
+          start: '2019-12-13T11:00:00',
+          constraint: 'availableForMeeting',
+        },
+        {
+          title: 'Conferencia Ejemplo 2',
+          start: '2019-12-18',
+          end: '2019-12-20'
+        },
+        {
+          title: 'Fiesta',
+          start: '2019-12-29T20:00:00'
+        },
 
-  <title>Calendario</title>
-</head>
+        // Muestra ciertas areas disponibles
+        {
+          groupId: 'availableForMeeting',
+          start: '2019-12-11T10:00:00',
+          end: '2019-12-11T16:00:00',
+          rendering: 'background'
+        },
+        {
+          groupId: 'availableForMeeting',
+          start: '2019-12-13T10:00:00',
+          end: '2019-12-13T16:00:00',
+          rendering: 'background'
+        },
 
-<body>
+        // Eventos no pueden ser programados en estas fechas
+        {
+          start: '2019-12-14',
+          end: '2019-12-18',
+          overlap: false,
+          rendering: 'background',
+          color: '#ff9f89'
+        },
+        {
+          start: '2019-12-25',
+          end: '2019-12-29',
+          overlap: false,
+          rendering: 'background',
+          color: '#ff9f89'
+        }
+      ]
+    });
+
+    calendar.render();
+  });
+
+</script>
+    <style>
+          body {
+            margin: 0px 0px;
+            padding: 0;
+            font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+            font-size: auto;
+          }
+          #calendar {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+    </style>
+      
+
+    <title>Calendario</title>
+  </head>
+
+  <body>
   <!-- Contenido -->
   <!--header-->
   <header>
@@ -35,71 +137,18 @@
 
   <?php include "../page/Includes/navbar.php"; ?>
   
-  <!-- Fin Barra de navegacion -->
+ <!--fin de barra de navegación-->
   <br><br>
   <h3>Calendario de Eventos</h3>
-  <div class="container">
-    <div class="col-12">
-      <div class="box">
-        <div class="month">
-          <ul>
-            <li class="prev">&#10094;</li>
-            <li class="next">&#10095;</li>
-            <li>
-              Octubre<br>
-              <span style="font-size:18px">2019</span>
-            </li>
-          </ul>
-        </div>
-
-        <ul class="weekdays">
-          <li>Lu</li>
-          <li>Ma</li>
-          <li>Mi</li>
-          <li>Ju</li>
-          <li>Vi</li>
-          <li>Sa</li>
-          <li>Do</li>
-        </ul>
-
-        <ul class="days">
-          <li>1</li>
-          <li>2</li>
-          <li>3</li>
-          <li>4</li>
-          <li>5</li>
-          <li>6</li>
-          <li>7</li>
-          <li>8</li>
-          <li>9</li>
-          <li>10</li>
-          <li>11</li>
-          <li>12</li>
-          <li>13</li>
-          <li>14</li>
-          <li>15</li>
-          <li>16</li>
-          <li>17</li>
-          <li>18</li>
-          <li>19</li>
-          <li>20</li>
-          <li>21</li>
-          <li>22</li>
-          <li>23</li>
-          <li>24</li>
-          <li><span class="active">25</span></li>
-          <li>26</li>
-          <li>27</li>
-          <li>28</li>
-          <li>29</li>
-          <li>30</li>
-          <li>31</li>
-        </ul>
+   <div class="container">
+      <div class="col-12">
+         <div class="box">
+            <div id='calendar'></div>
+         </div>
       </div>
-    </div>
-  </div>
-
-  <!--Fin Primer Div-->
+   </div>
+              
+<!--Fin Primer Div-->
 
   <<!-- Footer -->
 
