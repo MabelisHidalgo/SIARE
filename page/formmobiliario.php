@@ -36,7 +36,7 @@
         <div class="clas-col-12">
           <div class="boxfrm2">
             <!--Formulario-->
-              <form method="POST">
+              <form method="POST" action="../php/mobForm.php">
                 <!-- Campo-->
                   <h4>Presentación</h4>
                   <br>
@@ -47,7 +47,7 @@
                                         Podium: 
                                     </div>
                                     <div class="col-md-8">
-                                        <input type="number" id="datos2" name="" min="1"><br>
+                                        <input type="number" id="datos2" name="podium" min="1"><br>
                                     </div>
                                 </div>
                              </div>
@@ -58,7 +58,7 @@
                                         Bandera: 
                                     </div>
                                     <div class="col-md-8">
-                                        <input type="number" id="datos2" name="" min="1"><br>
+                                        <input type="number" id="datos2" name="bandera" min="1"><br>
                                     </div>
                                 </div>
                              </div>
@@ -69,7 +69,7 @@
                                         Estandarte UTP: 
                                     </div>
                                     <div class="col-md-8">
-                                        <input type="number" id="datos2" name="" min="1"><br>
+                                        <input type="number" id="datos2" name="estandarte" min="1"><br>
                                     </div>
                                 </div>
                              </div>
@@ -82,7 +82,7 @@
                                         Tripodes: 
                                     </div>
                                     <div class="col-md-8">
-                                        <input type="number" id="datos2" name="" min="1"><br>
+                                        <input type="number" id="datos2" name="tripode" min="1"><br>
                                     </div>
                                 </div>
                              </div>
@@ -93,7 +93,7 @@
                                         Bases y bordones: 
                                     </div>
                                     <div class="col-md-8">
-                                        <input type="number" id="datos2" name="" min="1"><br>
+                                        <input type="number" id="datos2" name="base_bordones" min="1"><br>
                                     </div>
                                 </div>
                              </div>
@@ -104,7 +104,7 @@
                                         Telas para cerchas: 
                                     </div>
                                     <div class="col-md-8">
-                                        <input type="number" id="datos2" name="" min="1"><br>
+                                        <input type="number" id="datos2" name="tela_cercha" min="1"><br>
                                     </div>
                                 </div>
                              </div>
@@ -391,7 +391,7 @@
                          <hr>
                          <div class="row text-center">
                             <div class="col-sm-12">
-                              <input  class="btn btn-primary custom-btn" type="submit" name="" value="Enviar Solicitud">
+                              <input  class="btn btn-primary custom-btn" type="submit" name="submit" value="Enviar Solicitud">
                             </div>
                          </div>
 
