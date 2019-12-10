@@ -1,24 +1,29 @@
-<?php session_start(); ?>
+
 <?php include "../php/db.php"; ?>
+<?php include "funciones.php";  ?>
 <?php 
 
 if(isset($_POST['submit'])){
-    $cob_Perioditica = $_POST["periodistica"];
-    $fotografia = $_POST["fotografia"];
-    $filmacion = $_POST["filmacion"];
-    $divulgacion = $_POST["divulgacion"];
-    $redes = $_POST["redes"];
-    $sonido = $_POST["sonido"];
-    $entrevista = $_POST["entrevista"];
+    global $connection;
+    $cob_Perioditica = generarNull($_POST["periodistica"]); 
+    echo strlen($_POST["periodistica"]);
+    $fotografia = generarNull($_POST["fotografia"]);
+    $filmacion = generarNull($_POST["filmacion"]);
+    $divulgacion = generarNull($_POST["divulgacion"]);
+    $redes = generarNull($_POST["redes"]);
+    $sonido = generarNull($_POST["sonido"]);
+    $entrevista = generarNull($_POST["entrevista"]);
+    $id = strval(rand(10000,99999));
 
-    echo "<p>$cob_Perioditica</p> <br>";
-    echo "<p>$fotografia</p> <br>";
-    echo "<p>$filmacion</p> <br>";
-    echo "<p>$divulgacion</p> <br>";
-    echo "<p>$redes</p> <br>";
-    echo "<p>$sonido</p> <br>";
-    echo "<p>$entrevista</p> <br>";
+    $query = "INSERT INTO SOLICITUD_PRENSA(ID, Cob_Periodistica, Fotografia, film, Web , Redes, Equipo_Sonido, Entrevista, Estado)";
+    $query .= "VALUES ('$id', '$cob_Perioditica', '$fotografia', '$filmacion', '$divulgacion', '$redes', '$sonido', '$entrevista', 'pendiente')";
+    
+    $result = mysqli_query($connection, $query);
+    
 }
+
+
+
 
 
 
