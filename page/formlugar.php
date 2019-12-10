@@ -97,7 +97,8 @@
                      Descripción:
                   </div>
                   <div class="col-sm-12 col-md-9">
-                     <input type="text" id="descrip" name="descripcion" /><br /><br />
+                     <textarea id="descrip" rows="3" cols="100" placeholder="comentarios aquí" name="descripcion"></textarea><br><br>
+                    <!--<input type="text" id="descrip" name="descripcion" /><br /><br />-->
                   </div>
                </div>
                <!-- Campo-->

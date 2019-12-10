@@ -43,7 +43,7 @@
          <div class="container text-center py-3">
              <div class="col-sm-12">
                  <img src="../img/logo_utp.png" class="logoutp">
-                 <h4>Universidad Tecnolgica de Panamá</h4>
+                 <h4>Universidad Tecnológica de Panamá</h4>
                  <h5>Sistema para la Reservación de Eventos Academicos</h5>
              </div>
          </div>
@@ -59,9 +59,10 @@
              <div class="box text-center">
                 <img src="../img/usuario.png" id="fotoperfil" >
                 <!--CAMBIANDO FOTO DE PERFIL-->
-                    <form class="my-2" action="#">
-                      <input type="file" name="pic" accept="image/*">
-                      <input type="submit" value="Cambiar Imagen">
+                    <form class="col-12 my-2" action="#">
+                      <input  type="file" name="pic" accept="image/*">
+                      <br><br>
+                      <input class="btn btn-primary custom-btn" type="submit" value="Cambiar Imagen">
                     </form>
                 <br> 
                 <button class="btn btn-primary custom-btn">Editar perfil</button>

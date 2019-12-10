@@ -58,7 +58,7 @@
 <!----------------------CONTENIDO------------------------->
 <h3 class="py-3">Historial de Solicitudes</h3>
 <!---------------------Formulario de opciones----------------------->
-	<div class="container-fluid mx-2 pb-3">
+	<!--<div class="container-fluid mx-2 pb-3">
     <select action="#.php" method="POST" name="#" id="opCuadro">
           <option value="Lugar">Lugar</option>
           <option value="Fecha">Fecha</option>
@@ -68,10 +68,10 @@
 <!--------------------Estructura del Contenido---------------------->
 <div class="container justify-content-md-center h-100">
     <div class="row justify-content-around">
-      <div class="col-4" id="fondoSol">
+      <div class="col-sm-12 col-md-5 col-lg-4" id="fondoSol">
         <h2>HISTORIAL DE SOLICITUDES</h2>
         <form action="../page/solicitud_historial.php" method="post">
-            <select name="option" size="11" id="histoCuadro">
+            <select name="option" size="6" id="histoCuadro">
             <?php 
                 while($count = mysqli_fetch_array($result, MYSQLI_ASSOC)){
                   $nombre = $count["Nombre_Evento"];
@@ -89,7 +89,7 @@
         
         </div>
 
-            <div class="col-6" id="fondoSol" style="max-width: 600px;">
+            <div class="col-sm-12 col-md-7 col-lg-6" id="fondoSol" style="max-width: 600px;">
               <h2>DATOS DE LA SOLICITUD</h2>
             <!------------------Información sobre la solicitud--------------------->
                 

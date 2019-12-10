@@ -55,10 +55,10 @@ if(isset($_POST["submit"])){
  <br>
      <div class="class container">
           <div class="class row">
-              <div class="col-4">
-                <div class="class boxsol">
+              <div class="col-sm-12 col-md-5 col-lg-4">
+                <div class="class boxper">
                     <form action="../page/solicitud.php" method = "post">
-                        <select name="option" size="11" id="histoCuadro">
+                        <select name="option" size="6" id="histoCuadro">
                         <?php 
                              while($count = mysqli_fetch_array($result, MYSQLI_ASSOC)){
                               $nombre = $count["Nombre_Evento"];
@@ -75,7 +75,8 @@ if(isset($_POST["submit"])){
                   </form>
                 </div>
               </div>
-              <div class="col-8">
+              <br><br><br>
+              <div class="col-sm-12 col-md-7 col-lg-8">
                  <div class="class boxsol">
                    <?php if(empty($datos)){  ?>
 

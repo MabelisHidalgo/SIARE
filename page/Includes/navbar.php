@@ -11,7 +11,10 @@
           <li class="nav-item active">
             <a class="nav-link" href="../page/calendarioprin.php">Calendario<span class="sr-only">(current)</span></a>
           </li>
-          <li class="nav-item dropdown">
+           <li class="nav-item">
+            <a class="nav-link" href="../page/formlugar.php">Formulario</a>
+          </li>
+          <!--<li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
               aria-haspopup="true" aria-expanded="false">
               Formularios
@@ -21,7 +24,7 @@
               <a class="dropdown-item" href="../page/formmobiliario.php">Formulario Mobiliario</a>
               <a class="dropdown-item" href="../page/formprensa.php">Formulario Prensa</a>
             </div>
-          </li>
+          </li> -->
           <li class="nav-item">
             <a class="nav-link" href="../page/solicitud.php">Informacion de Solicitudes</a>
           </li>

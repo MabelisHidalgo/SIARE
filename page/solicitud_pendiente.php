@@ -62,7 +62,7 @@
 <!----------------------CONTENIDO------------------------->
 <h3 class="py-3">Solicitudes Pendientes</h3>
 <!---------------------Formulario de opciones----------------------->
-	<div class="container-fluid mx-2 pb-3">
+	<!--<div class="container-fluid mx-2 pb-3">
     <select action="#.php" method="POST" name="#" id="opCuadro">
           <option value="Lugar">Lugar</option>
           <option value="Fecha">Fecha</option>
@@ -72,10 +72,10 @@
 <!--------------------Estructura del Contenido---------------------->
 <div class="container justify-content-md-center h-100">
     <div class="row justify-content-around">
-      <div class="col-4" id="fondoSol">
+      <div class="col-sm-12 col-md-5 col-lg-4" id="fondoSol">
         <h2>BANDEJA DE ENTRADA</h2>
         <form method = "post" action="solicitud_pendiente.php">
-            <select name="option" size="11" id="histoCuadro">
+            <select name="option" size="6" id="histoCuadro">
               <?php 
                 while($count = mysqli_fetch_array($result_1, MYSQLI_ASSOC)){
                   $nombre = $count["Nombre_Evento"];
@@ -89,12 +89,13 @@
             </select>
 
             <input class="btn btn-primary custom-btn" type="submit" name="submit1" value="Buscar" />
-          <br>
+          
         </form>
         <!-----------------Paginación(los botocitos que te llevan a la siguiente pagina)------------------>
         
         </div>
-            <div class="col-6" id="fondoSol" style="max-width:600px;">
+        <br><br>
+            <div class="col-sm-12 col-md-7 col-lg-6" id="fondoSol" style="max-width:600px;">
               <h2>INFORMACIÓN DEL EVENTO</h2>
                   
               <?php if(empty($datos) ){ ?>
