@@ -1,3 +1,5 @@
+
+
 <?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -38,169 +40,43 @@
           <div class="col-12">
                <div class="boxfrm2">
                      <!--Formulario-->
-                     <form method="POST">
+                     <form method="POST" action="../php/prensaForm.php">
                          <!--Campo 1 y 2 -->
                          <div class="col-12">
                              <h4>Cobertura periodistica:</h4><br>
-                             <textarea id="t1t2" rows="3" cols="75" placeholder="comentarios aquí"></textarea>
+                             <textarea id="t1t2" rows="3" cols="75" placeholder="comentarios aquí" name="periodistica"></textarea>
                          </div>
                          <hr>
                          <div class="col-12">
                              <h4>Fotografia:</h4><br>
-                             <textarea id="t1t2" rows="3" cols="75" placeholder="comentarios aquí"></textarea>
+                             <textarea id="t1t2" rows="3" cols="75" placeholder="comentarios aquí" name="fotografia"></textarea>
                          </div>
                          <hr>
                          <h4>Filmación:</h4> <br>
                          <div class="col-12">
-                             <div class="row">
-                                   <div class="col-6">
-                                       Videoconferencia Transmición
-                                   </div>
-                                   <div class="col-6">
-                                       <input type="checkbox" name="">
-                                   </div>
-                                <br>
-                                    <div class="col-6">
-                                       Videoconferencia Grabación
-                                   </div>
-                                   <div class="col-6">
-                                       <input type="checkbox" name="">
-                                   </div>
-                                <br>
-                                    <div class="col-6">
-                                       Entrevista
-                                   </div>
-                                   <div class="col-6">
-                                       <input type="checkbox" name="">
-                                   </div> 
-                             </div>
+                         <textarea id="t1t2" rows="3" cols="75" placeholder="comentarios aquí" name="filmacion"></textarea>
                         <hr>
                         <h4>Divulgación en web de la UTP</h4><br>
                         <div class="col-12">
-                             <textarea id="t1t2" rows="3" cols="75" placeholder="comentarios aquí"></textarea>
+                             <textarea id="t1t2" rows="3" cols="75" placeholder="comentarios aquí" name="divulgacion"></textarea>
                          </div>
                          <hr>
                          <h4>Redes Sociales</h4> <br>
                          <div class="col-12">
-                             <div class="row">
-                                   <div class="col-6">
-                                       Facebook
-                                   </div>
-                                   <div class="col-6">
-                                       <input type="checkbox" name="">
-                                   </div>
-                                <br>
-                                    <div class="col-6">
-                                       Instagram
-                                   </div>
-                                   <div class="col-6">
-                                       <input type="checkbox" name="">
-                                   </div>
-                                <br>
-                                    <div class="col-6">
-                                       Twitter
-                                   </div>
-                                   <div class="col-6">
-                                       <input type="checkbox" name="">
-                                   </div>
-                                <br>
-                                   <div class="col-6">
-                                       otros
-                                   </div>
-                                   <div class="col-6">
-                                       <input type="checkbox" name="">
-                                   </div>
-                                <br>
-                                   <div class="col-12">
-                                       <br>
-                                       <textarea id="t1t2" rows="3" cols="75" placeholder="comentarios aquí"></textarea>
-                                   </div>
-                             </div>
+                         <textarea id="t1t2" rows="3" cols="75" placeholder="comentarios aquí" name="redes"></textarea>
                          <hr>
                          <h4>Equipo de Sonido</h4> <br>
                          <div class="col-12">
-                             <div class="row">
-                                   <div class="col-6">
-                                       Microfono
-                                   </div>
-                                   <div class="col-6">
-                                       <input type="checkbox" name="">
-                                   </div>
-                                <br>
-                                    <div class="col-6">
-                                       Bocinas
-                                   </div>
-                                   <div class="col-6">
-                                       <input type="checkbox" name="">
-                                   </div>
-                                <br>
-                                    <div class="col-6">
-                                       Amplificador
-                                   </div>
-                                   <div class="col-6">
-                                       <input type="checkbox" name="">
-                                   </div>
-                                <br>
-                                   <div class="col-6">
-                                       Pedestales
-                                   </div>
-                                   <div class="col-6">
-                                       <input type="checkbox" name="">
-                                   </div>
-                                <br>
-                                   <div class="col-6">
-                                       Sonido para videoconferencia
-                                   </div>
-                                   <div class="col-6">
-                                       <input type="checkbox" name="">
-                                   </div>
-                                   <br>
-                                   <div class="col-12">
-                                       <br>
-                                       <textarea id="t1t2" rows="3" cols="75" placeholder="comentarios aquí"></textarea>
-                                   </div>   
-                             </div>
+                         <textarea id="t1t2" rows="3" cols="75" placeholder="comentarios aquí" name="sonido"></textarea>
                              <hr>
                          <h4>Entrevista en los medios de comunicación social</h4> <br>
                          <div class="col-12">
-                             <div class="row">
-                                   <div class="col-6">
-                                       TV
-                                   </div>
-                                   <div class="col-6">
-                                       <input type="checkbox" name="">
-                                   </div>
-                                <br>
-                                    <div class="col-6">
-                                       Radio
-                                   </div>
-                                   <div class="col-6">
-                                       <input type="checkbox" name="">
-                                   </div>
-                                <br>
-                                    <div class="col-6">
-                                       Periodico
-                                   </div>
-                                   <div class="col-6">
-                                       <input type="checkbox" name="">
-                                   </div>
-                                <br>
-                                   <div class="col-6">
-                                       Publicidad
-                                   </div>
-                                   <div class="col-6">
-                                       <input type="checkbox" name="">
-                                   </div>
-                                <br>
-                                   <div class="col-12">
-                                       <br>
-                                       <textarea id="t1t2" rows="3" cols="75" placeholder="comentarios aquí"></textarea>
-                                   </div>
+                         <textarea id="t1t2" rows="3" cols="75" placeholder="comentarios aquí" name="entrevista"></textarea>
                              </div>
                              <br>
                              <div class="row text-center">
                             <div class="col-sm-12">
-                              <input class="btn btn-primary custom-btn" type="submit" name="" value="Enviar Solicitud">
+                              <input class="btn btn-primary custom-btn" type="submit" name="submit" value="Enviar Solicitud">
                             </div>
                             </div>
 

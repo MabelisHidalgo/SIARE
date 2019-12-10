@@ -8,10 +8,11 @@ $sql = "SELECT Nombre_Evento, ID FROM SOLICITUD WHERE UsuarioID = '$usuario'";
 $result = mysqli_query($connection, $sql);
 
 if(isset($_POST["submit"])){
+
   $option = $_POST['option'];
   $query = "SELECT Nombre_Evento, Fecha, Hora_Inicio, Hora_fin, Lugar, EStado FROM SOLICITUD WHERE ID = '$option'";
-    $result_1 = mysqli_query($connection, $query);
-    $datos = mysqli_fetch_array($result_1);
+    $result_1 = mysqli_query($connection, $query);   
+    $datos = mysqli_fetch_array($result_1); 
 }
 
 ?>
