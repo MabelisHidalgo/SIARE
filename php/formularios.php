@@ -1,9 +1,12 @@
 <?php include "db.php"; ?>
 <?php include "funciones.php"; ?>
+<?php include "redirect.php"; ?>
 <?php
     //inicio de session
     session_start();
     $_SESSION["solicitud_actual"] = "";
+    $_SESSION["prensa"] = false;
+    $_SESSION["mobiliario"] = false;
 
     if(isset($_POST['submit'])){
         $id = generateRandomString();
@@ -18,6 +21,8 @@
         $formMobiliario = NULL; //Hacer dinámico
         $estado = "pendiente";  //hacer dinámico
         $usuario = $_SESSION["id"];    //Tomar de session
+        $directPren = $_POST["directPren"];
+        $directMob = $_POST["directMob"];
         
         $lugar = mysqli_real_escape_string($connection,$lugar);
         $nombreEvento = mysqli_real_escape_string($connection,$nombreEvento);
@@ -38,8 +43,25 @@
         
         $result = mysqli_query($connection, $query);
         $_SESSION["solicitud_actual"] = $id;
+        $direct = 'calendarioprin.php';
 
-        header('Location:../page/calendarioprin.php');
+        if($directMob == "1" and $directPren == "1"){
+            $_SESSION["prensa"] = true;
+            $_SESSION["mobiliario"] = true;
+            $direct = donde();
+        }elseif($directPren == "1"){
+            $_SESSION["prensa"] = true;
+            $direct = donde();
+        }elseif($directMob == "1"){
+            $_SESSION["mobiliario"] = true;
+            $direct = donde();
+        }else{
+            $direct = donde();
+        }
+
+        header('Location:../page/'.$direct);
+
+
 
 
     }
